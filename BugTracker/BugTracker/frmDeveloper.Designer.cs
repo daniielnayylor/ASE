@@ -1,6 +1,6 @@
 ﻿namespace BugTracker
 {
-    partial class Form1
+    partial class frmDeveloper
     {
         /// <summary>
         /// Required designer variable.

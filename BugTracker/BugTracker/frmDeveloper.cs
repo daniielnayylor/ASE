@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace BugTracker
 {
-    public partial class Form1 : Form
+    public partial class frmDeveloper : Form
     {
         SqlConnection mySqlConnection;
-        public Form1()
+        public frmDeveloper()
         {
             InitializeComponent();
             populateListBox();
@@ -129,7 +129,7 @@ namespace BugTracker
             populateListBox();
             //lbxBugs.Items.RemoveAt(bugID);
         }
-
+       
         private void btnEdit_Click(object sender, EventArgs e)
         {
             //edits the data within the columns for the row of the given ID
@@ -143,6 +143,8 @@ namespace BugTracker
             //cmdEditTable.Parameters.AddWithValue("@bigtype", txtbugType.Text);
 
             cmdEditTable.ExecuteNonQuery();
+            populateListBox();
+
 
         }
     }
