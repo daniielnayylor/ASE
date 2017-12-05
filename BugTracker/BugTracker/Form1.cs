@@ -132,11 +132,13 @@ namespace BugTracker
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            //edits the data within the columns for the row of the given ID
             String commandString = "UPDATE BugTable SET BugType = '" + txtbugType.Text + "', ClassFileName = '"
                 + txtcfName.Text + "', MethodName = '" + txtmthdName.Text + "', CodeBlock = '" + txtcbName.Text +
                 "', LineNumber = '" + txtlineNumb.Text + "' WHERE BugId = '" + txtbugID.Text + "'";
             SqlCommand cmdEditTable = new SqlCommand(commandString, mySqlConnection);
 
+            //different sql statement for doing the edit command
             //String commandString = "UPDATE BugTable SET BugType = @bugtype, ClassFileName = @classfilename. MethodName = @methodname, CodeBlock = @codeblock, LineNumber = @linenumber Where BugId = @bugid";
             //cmdEditTable.Parameters.AddWithValue("@bigtype", txtbugType.Text);
 
