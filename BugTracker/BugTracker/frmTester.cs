@@ -25,7 +25,7 @@ namespace BugTracker
             mySqlConnection =
                  new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Visual Studio\Projects\Bug Tracker - Assignment 2\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
 
-            String selcmd = "SELECT BugId, App, Error, Cause FROM TesterBugTable ORDER BY BugId";
+            String selcmd = "SELECT BugId, App, Error, Cause FROM BugTable ORDER BY BugId";
 
             SqlCommand mySqlCommand = new SqlCommand(selcmd, mySqlConnection);
 
@@ -53,7 +53,7 @@ namespace BugTracker
 
         public void cleartxtBoxes()
         {
-            txtAppName.Text = txtCause.Text = txtError.Text = "";
+            txtAppName.Text = txtCause.Text = txtError.Text = txtbugID.Text = "";
         }
 
         public bool checkInputs()
@@ -72,14 +72,14 @@ namespace BugTracker
 
         }
 
-        public void insertRecord(String appName, String error, String cause, String commandString)
+        public void insertRecord(String bugID, String appName, String error, String cause, String commandString)
         {
 
             try
             {
                 SqlCommand cmdInsert = new SqlCommand(commandString, mySqlConnection);
 
-                
+                cmdInsert.Parameters.AddWithValue("@bugid", bugID);
                 cmdInsert.Parameters.AddWithValue("@app", appName);
                 cmdInsert.Parameters.AddWithValue("@error", error);
                 cmdInsert.Parameters.AddWithValue("@cause", cause);
@@ -87,7 +87,7 @@ namespace BugTracker
             }
             catch (SqlException ex)
             {
-               // MessageBox.Show(bugID + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(bugID + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -96,9 +96,9 @@ namespace BugTracker
             if (checkInputs())
             {
 
-                String commandString = "INSERT INTO TesterBugTable(App, Error, Cause) VALUES (@app, @error, @cause)";
+                String commandString = "INSERT INTO BugTable(BugId, App, Error, Cause) VALUES (@bugid, @app, @error, @cause)";
 
-                insertRecord(txtAppName.Text, txtError.Text, txtCause.Text, commandString);
+                insertRecord(txtbugID.Text, txtAppName.Text, txtError.Text, txtCause.Text, commandString);
                 populateListBox();
                 cleartxtBoxes();
             }

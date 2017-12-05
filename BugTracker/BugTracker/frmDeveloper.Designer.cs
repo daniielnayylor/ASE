@@ -48,6 +48,18 @@
             this.label9 = new System.Windows.Forms.Label();
             this.removeID = new System.Windows.Forms.TextBox();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lbxBugView = new System.Windows.Forms.ListBox();
+            this.txtchoosebug = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.btnViewBug = new System.Windows.Forms.Button();
+            this.lbxSimpleList = new System.Windows.Forms.ListBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtsimpleview = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.lbxSimpleView = new System.Windows.Forms.ListBox();
+            this.btnSimpleView = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -66,7 +78,7 @@
             this.lbxBugs.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbxBugs.FormattingEnabled = true;
             this.lbxBugs.ItemHeight = 19;
-            this.lbxBugs.Location = new System.Drawing.Point(372, 83);
+            this.lbxBugs.Location = new System.Drawing.Point(718, 82);
             this.lbxBugs.Name = "lbxBugs";
             this.lbxBugs.Size = new System.Drawing.Size(248, 327);
             this.lbxBugs.TabIndex = 1;
@@ -75,11 +87,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(437, 40);
+            this.label1.Location = new System.Drawing.Point(451, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 26);
+            this.label1.Size = new System.Drawing.Size(143, 26);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Bug Table";
+            this.label1.Text = "Simple Bug List";
             // 
             // label2
             // 
@@ -239,11 +251,135 @@
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // Form1
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(742, 34);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(170, 26);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Advanced Bug List";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(1065, 34);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(185, 26);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Advanced Bug View";
+            // 
+            // lbxBugView
+            // 
+            this.lbxBugView.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbxBugView.FormattingEnabled = true;
+            this.lbxBugView.ItemHeight = 19;
+            this.lbxBugView.Location = new System.Drawing.Point(1049, 82);
+            this.lbxBugView.Name = "lbxBugView";
+            this.lbxBugView.Size = new System.Drawing.Size(248, 327);
+            this.lbxBugView.TabIndex = 22;
+            // 
+            // txtchoosebug
+            // 
+            this.txtchoosebug.Location = new System.Drawing.Point(1137, 428);
+            this.txtchoosebug.Name = "txtchoosebug";
+            this.txtchoosebug.Size = new System.Drawing.Size(119, 20);
+            this.txtchoosebug.TabIndex = 23;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Calibri", 12F);
+            this.label12.Location = new System.Drawing.Point(1075, 429);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(56, 19);
+            this.label12.TabIndex = 24;
+            this.label12.Text = "BugID: ";
+            // 
+            // btnViewBug
+            // 
+            this.btnViewBug.Font = new System.Drawing.Font("Calibri", 12F);
+            this.btnViewBug.Location = new System.Drawing.Point(1121, 454);
+            this.btnViewBug.Name = "btnViewBug";
+            this.btnViewBug.Size = new System.Drawing.Size(104, 30);
+            this.btnViewBug.TabIndex = 25;
+            this.btnViewBug.Text = "View Bug";
+            this.btnViewBug.UseVisualStyleBackColor = true;
+            this.btnViewBug.Click += new System.EventHandler(this.btnViewBug_Click);
+            // 
+            // lbxSimpleList
+            // 
+            this.lbxSimpleList.FormattingEnabled = true;
+            this.lbxSimpleList.Location = new System.Drawing.Point(422, 83);
+            this.lbxSimpleList.Name = "lbxSimpleList";
+            this.lbxSimpleList.Size = new System.Drawing.Size(248, 147);
+            this.lbxSimpleList.TabIndex = 26;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Calibri", 12F);
+            this.label13.Location = new System.Drawing.Point(435, 429);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(56, 19);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "BugID: ";
+            // 
+            // txtsimpleview
+            // 
+            this.txtsimpleview.Location = new System.Drawing.Point(510, 429);
+            this.txtsimpleview.Name = "txtsimpleview";
+            this.txtsimpleview.Size = new System.Drawing.Size(119, 20);
+            this.txtsimpleview.TabIndex = 28;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(451, 248);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(158, 26);
+            this.label14.TabIndex = 29;
+            this.label14.Text = "Simple Bug View";
+            // 
+            // lbxSimpleView
+            // 
+            this.lbxSimpleView.FormattingEnabled = true;
+            this.lbxSimpleView.Location = new System.Drawing.Point(422, 276);
+            this.lbxSimpleView.Name = "lbxSimpleView";
+            this.lbxSimpleView.Size = new System.Drawing.Size(248, 147);
+            this.lbxSimpleView.TabIndex = 30;
+            // 
+            // btnSimpleView
+            // 
+            this.btnSimpleView.Font = new System.Drawing.Font("Calibri", 12F);
+            this.btnSimpleView.Location = new System.Drawing.Point(490, 455);
+            this.btnSimpleView.Name = "btnSimpleView";
+            this.btnSimpleView.Size = new System.Drawing.Size(104, 30);
+            this.btnSimpleView.TabIndex = 31;
+            this.btnSimpleView.Text = "View Bug";
+            this.btnSimpleView.UseVisualStyleBackColor = true;
+            this.btnSimpleView.Click += new System.EventHandler(this.btnSimpleView_Click);
+            // 
+            // frmDeveloper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 496);
+            this.ClientSize = new System.Drawing.Size(1347, 496);
+            this.Controls.Add(this.btnSimpleView);
+            this.Controls.Add(this.lbxSimpleView);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.txtsimpleview);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.lbxSimpleList);
+            this.Controls.Add(this.btnViewBug);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.txtchoosebug);
+            this.Controls.Add(this.lbxBugView);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.removeID);
             this.Controls.Add(this.label9);
@@ -264,7 +400,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbxBugs);
             this.Controls.Add(this.btnAdd);
-            this.Name = "Form1";
+            this.Name = "frmDeveloper";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -293,6 +429,18 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox removeID;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ListBox lbxBugView;
+        private System.Windows.Forms.TextBox txtchoosebug;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btnViewBug;
+        private System.Windows.Forms.ListBox lbxSimpleList;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtsimpleview;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ListBox lbxSimpleView;
+        private System.Windows.Forms.Button btnSimpleView;
     }
 }
 
