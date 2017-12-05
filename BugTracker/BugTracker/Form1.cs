@@ -121,11 +121,12 @@ namespace BugTracker
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-
+            //removes the row from the table from the specified row ID
             int id = Int32.Parse(removeID.Text);
             String commandString = "DELETE FROM BugTable WHERE BugId = " + id;
             SqlCommand cmdClearTable = new SqlCommand(commandString, mySqlConnection);
             cmdClearTable.ExecuteNonQuery();
+            populateListBox();
             //lbxBugs.Items.RemoveAt(bugID);
         }
 
