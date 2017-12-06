@@ -37,7 +37,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtbugID = new System.Windows.Forms.TextBox();
+            this.txtAppName = new System.Windows.Forms.TextBox();
             this.txtbugType = new System.Windows.Forms.TextBox();
             this.txtcfName = new System.Windows.Forms.TextBox();
             this.txtmthdName = new System.Windows.Forms.TextBox();
@@ -46,7 +46,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnRemove = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.removeID = new System.Windows.Forms.TextBox();
+            this.txtArchive = new System.Windows.Forms.TextBox();
             this.btnEdit = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -60,6 +60,9 @@
             this.label14 = new System.Windows.Forms.Label();
             this.lbxSimpleView = new System.Windows.Forms.ListBox();
             this.btnSimpleView = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtComments = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -78,16 +81,16 @@
             this.lbxBugs.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbxBugs.FormattingEnabled = true;
             this.lbxBugs.ItemHeight = 19;
-            this.lbxBugs.Location = new System.Drawing.Point(718, 82);
+            this.lbxBugs.Location = new System.Drawing.Point(705, 83);
             this.lbxBugs.Name = "lbxBugs";
-            this.lbxBugs.Size = new System.Drawing.Size(248, 327);
+            this.lbxBugs.Size = new System.Drawing.Size(262, 137);
             this.lbxBugs.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(451, 34);
+            this.label1.Location = new System.Drawing.Point(466, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 26);
             this.label1.TabIndex = 2;
@@ -99,9 +102,10 @@
             this.label2.Font = new System.Drawing.Font("Calibri", 12F);
             this.label2.Location = new System.Drawing.Point(12, 82);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 19);
+            this.label2.Size = new System.Drawing.Size(84, 19);
             this.label2.TabIndex = 3;
-            this.label2.Text = "BugID: ";
+            this.label2.Text = "App Name: ";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -153,13 +157,13 @@
             this.label7.TabIndex = 8;
             this.label7.Text = "Line Number: ";
             // 
-            // txtbugID
+            // txtAppName
             // 
-            this.txtbugID.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbugID.Location = new System.Drawing.Point(182, 83);
-            this.txtbugID.Name = "txtbugID";
-            this.txtbugID.Size = new System.Drawing.Size(180, 27);
-            this.txtbugID.TabIndex = 9;
+            this.txtAppName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAppName.Location = new System.Drawing.Point(182, 83);
+            this.txtAppName.Name = "txtAppName";
+            this.txtAppName.Size = new System.Drawing.Size(180, 27);
+            this.txtAppName.TabIndex = 9;
             // 
             // txtbugType
             // 
@@ -214,7 +218,7 @@
             // btnRemove
             // 
             this.btnRemove.Font = new System.Drawing.Font("Calibri", 12F);
-            this.btnRemove.Location = new System.Drawing.Point(148, 454);
+            this.btnRemove.Location = new System.Drawing.Point(1099, 322);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(104, 30);
             this.btnRemove.TabIndex = 16;
@@ -226,19 +230,19 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(12, 421);
+            this.label9.Location = new System.Drawing.Point(1018, 82);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(98, 19);
+            this.label9.Size = new System.Drawing.Size(84, 19);
             this.label9.TabIndex = 17;
-            this.label9.Text = "Remove Bug: ";
+            this.label9.Text = "App Name: ";
             // 
-            // removeID
+            // txtArchive
             // 
-            this.removeID.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.removeID.Location = new System.Drawing.Point(148, 421);
-            this.removeID.Name = "removeID";
-            this.removeID.Size = new System.Drawing.Size(104, 27);
-            this.removeID.TabIndex = 18;
+            this.txtArchive.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtArchive.Location = new System.Drawing.Point(1132, 82);
+            this.txtArchive.Name = "txtArchive";
+            this.txtArchive.Size = new System.Drawing.Size(137, 27);
+            this.txtArchive.TabIndex = 18;
             // 
             // btnEdit
             // 
@@ -255,7 +259,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(742, 34);
+            this.label10.Location = new System.Drawing.Point(742, 53);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(170, 26);
             this.label10.TabIndex = 20;
@@ -265,7 +269,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(1065, 34);
+            this.label11.Location = new System.Drawing.Point(727, 248);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(185, 26);
             this.label11.TabIndex = 21;
@@ -276,32 +280,33 @@
             this.lbxBugView.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbxBugView.FormattingEnabled = true;
             this.lbxBugView.ItemHeight = 19;
-            this.lbxBugView.Location = new System.Drawing.Point(1049, 82);
+            this.lbxBugView.Location = new System.Drawing.Point(705, 277);
             this.lbxBugView.Name = "lbxBugView";
-            this.lbxBugView.Size = new System.Drawing.Size(248, 327);
+            this.lbxBugView.Size = new System.Drawing.Size(262, 137);
             this.lbxBugView.TabIndex = 22;
             // 
             // txtchoosebug
             // 
-            this.txtchoosebug.Location = new System.Drawing.Point(1137, 428);
+            this.txtchoosebug.Font = new System.Drawing.Font("Calibri", 12F);
+            this.txtchoosebug.Location = new System.Drawing.Point(791, 430);
             this.txtchoosebug.Name = "txtchoosebug";
-            this.txtchoosebug.Size = new System.Drawing.Size(119, 20);
+            this.txtchoosebug.Size = new System.Drawing.Size(176, 27);
             this.txtchoosebug.TabIndex = 23;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label12.Location = new System.Drawing.Point(1075, 429);
+            this.label12.Location = new System.Drawing.Point(701, 429);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(56, 19);
+            this.label12.Size = new System.Drawing.Size(84, 19);
             this.label12.TabIndex = 24;
-            this.label12.Text = "BugID: ";
+            this.label12.Text = "App Name: ";
             // 
             // btnViewBug
             // 
             this.btnViewBug.Font = new System.Drawing.Font("Calibri", 12F);
-            this.btnViewBug.Location = new System.Drawing.Point(1121, 454);
+            this.btnViewBug.Location = new System.Drawing.Point(791, 463);
             this.btnViewBug.Name = "btnViewBug";
             this.btnViewBug.Size = new System.Drawing.Size(104, 30);
             this.btnViewBug.TabIndex = 25;
@@ -311,27 +316,30 @@
             // 
             // lbxSimpleList
             // 
+            this.lbxSimpleList.Font = new System.Drawing.Font("Calibri", 12F);
             this.lbxSimpleList.FormattingEnabled = true;
-            this.lbxSimpleList.Location = new System.Drawing.Point(422, 83);
+            this.lbxSimpleList.ItemHeight = 19;
+            this.lbxSimpleList.Location = new System.Drawing.Point(422, 82);
             this.lbxSimpleList.Name = "lbxSimpleList";
-            this.lbxSimpleList.Size = new System.Drawing.Size(248, 147);
+            this.lbxSimpleList.Size = new System.Drawing.Size(262, 137);
             this.lbxSimpleList.TabIndex = 26;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label13.Location = new System.Drawing.Point(435, 429);
+            this.label13.Location = new System.Drawing.Point(418, 429);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(56, 19);
+            this.label13.Size = new System.Drawing.Size(84, 19);
             this.label13.TabIndex = 27;
-            this.label13.Text = "BugID: ";
+            this.label13.Text = "App Name: ";
             // 
             // txtsimpleview
             // 
-            this.txtsimpleview.Location = new System.Drawing.Point(510, 429);
+            this.txtsimpleview.Font = new System.Drawing.Font("Calibri", 12F);
+            this.txtsimpleview.Location = new System.Drawing.Point(508, 430);
             this.txtsimpleview.Name = "txtsimpleview";
-            this.txtsimpleview.Size = new System.Drawing.Size(119, 20);
+            this.txtsimpleview.Size = new System.Drawing.Size(176, 27);
             this.txtsimpleview.TabIndex = 28;
             // 
             // label14
@@ -346,16 +354,18 @@
             // 
             // lbxSimpleView
             // 
+            this.lbxSimpleView.Font = new System.Drawing.Font("Calibri", 12F);
             this.lbxSimpleView.FormattingEnabled = true;
-            this.lbxSimpleView.Location = new System.Drawing.Point(422, 276);
+            this.lbxSimpleView.ItemHeight = 19;
+            this.lbxSimpleView.Location = new System.Drawing.Point(422, 277);
             this.lbxSimpleView.Name = "lbxSimpleView";
-            this.lbxSimpleView.Size = new System.Drawing.Size(248, 147);
+            this.lbxSimpleView.Size = new System.Drawing.Size(262, 137);
             this.lbxSimpleView.TabIndex = 30;
             // 
             // btnSimpleView
             // 
             this.btnSimpleView.Font = new System.Drawing.Font("Calibri", 12F);
-            this.btnSimpleView.Location = new System.Drawing.Point(490, 455);
+            this.btnSimpleView.Location = new System.Drawing.Point(508, 463);
             this.btnSimpleView.Name = "btnSimpleView";
             this.btnSimpleView.Size = new System.Drawing.Size(104, 30);
             this.btnSimpleView.TabIndex = 31;
@@ -363,11 +373,44 @@
             this.btnSimpleView.UseVisualStyleBackColor = true;
             this.btnSimpleView.Click += new System.EventHandler(this.btnSimpleView_Click);
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(1094, 53);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(116, 26);
+            this.label15.TabIndex = 32;
+            this.label15.Text = "Archive Bug";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Calibri", 12F);
+            this.label16.Location = new System.Drawing.Point(1095, 127);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(86, 19);
+            this.label16.TabIndex = 33;
+            this.label16.Text = "Comments: ";
+            // 
+            // txtComments
+            // 
+            this.txtComments.Font = new System.Drawing.Font("Calibri", 12F);
+            this.txtComments.Location = new System.Drawing.Point(1022, 161);
+            this.txtComments.Multiline = true;
+            this.txtComments.Name = "txtComments";
+            this.txtComments.Size = new System.Drawing.Size(247, 141);
+            this.txtComments.TabIndex = 34;
+            // 
             // frmDeveloper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1347, 496);
+            this.ClientSize = new System.Drawing.Size(1347, 505);
+            this.Controls.Add(this.txtComments);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.btnSimpleView);
             this.Controls.Add(this.lbxSimpleView);
             this.Controls.Add(this.label14);
@@ -381,7 +424,7 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.removeID);
+            this.Controls.Add(this.txtArchive);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.label8);
@@ -390,7 +433,7 @@
             this.Controls.Add(this.txtmthdName);
             this.Controls.Add(this.txtcfName);
             this.Controls.Add(this.txtbugType);
-            this.Controls.Add(this.txtbugID);
+            this.Controls.Add(this.txtAppName);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -418,7 +461,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtbugID;
+        private System.Windows.Forms.TextBox txtAppName;
         private System.Windows.Forms.TextBox txtbugType;
         private System.Windows.Forms.TextBox txtcfName;
         private System.Windows.Forms.TextBox txtmthdName;
@@ -427,7 +470,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox removeID;
+        private System.Windows.Forms.TextBox txtArchive;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -441,6 +484,9 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ListBox lbxSimpleView;
         private System.Windows.Forms.Button btnSimpleView;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtComments;
     }
 }
 

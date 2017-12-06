@@ -25,7 +25,7 @@ namespace BugTracker
             mySqlConnection =
                  new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Visual Studio\Projects\Bug Tracker - Assignment 2\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
 
-            String selcmd = "SELECT BugId, BugType, ClassFileName, MethodName, CodeBlock, LineNumber FROM BugTable ORDER BY BugId";
+            String selcmd = "SELECT App, BugType, ClassFileName, MethodName, CodeBlock, LineNumber FROM BugTable ORDER BY App";
 
             SqlCommand mySqlCommand = new SqlCommand(selcmd, mySqlConnection);
 
@@ -40,10 +40,13 @@ namespace BugTracker
                 while (mySqlDataReader.Read())
                 {
 
-                    lbxBugs.Items.Add("ID: " + mySqlDataReader["BugId"] + " Bug Type: " +
-                           mySqlDataReader["BugType"] + " Class File Name: " + mySqlDataReader["ClassFileName"]
-                           + " Method Name: " + mySqlDataReader["MethodName"] + " Code Block: " + mySqlDataReader["CodeBlock"]
-                           + " Line Number: " + mySqlDataReader["LineNumber"]);
+                    lbxBugs.Items.Add("App Name: " + mySqlDataReader["App"]);
+                    lbxBugs.Items.Add("Bug Type: " + mySqlDataReader["BugType"]);
+                    lbxBugs.Items.Add("Class File Name: " + mySqlDataReader["ClassFileName"]);
+                    lbxBugs.Items.Add("Method Name: " + mySqlDataReader["MethodName"]);
+                    lbxBugs.Items.Add("Code Block: " + mySqlDataReader["CodeBlock"]);
+                    lbxBugs.Items.Add(" Line Number: " + mySqlDataReader["LineNumber"]);
+                    lbxBugs.Items.Add("");
 
 
                 }
@@ -64,7 +67,7 @@ namespace BugTracker
             mySqlConnection =
                  new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Visual Studio\Projects\Bug Tracker - Assignment 2\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
 
-            String selcmd = "SELECT BugId, BugType, ClassFileName, MethodName, CodeBlock, LineNumber FROM BugTable WHERE BugId = " + txtchoosebug.Text;
+            String selcmd = "SELECT App, BugType, ClassFileName, MethodName, CodeBlock, LineNumber FROM BugTable WHERE App = '" + txtchoosebug.Text + "'";
 
             SqlCommand mySqlCommand = new SqlCommand(selcmd, mySqlConnection);
 
@@ -84,7 +87,7 @@ namespace BugTracker
                     //       + " Method Name: " + mySqlDataReader["MethodName"] + " Code Block: " + mySqlDataReader["CodeBlock"]
                     //       + " Line Number: " + mySqlDataReader["LineNumber"]);
 
-                    lbxBugView.Items.Add("ID: " + mySqlDataReader["BugId"]);
+                    lbxBugView.Items.Add("App Name: " + mySqlDataReader["App"]);
                     lbxBugView.Items.Add("Bug Type: " + mySqlDataReader["BugType"]);
                     lbxBugView.Items.Add("Class Fine Name: " + mySqlDataReader["ClassFileName"]);
                     lbxBugView.Items.Add("Method Name: " + mySqlDataReader["MethodName"]);
@@ -107,7 +110,7 @@ namespace BugTracker
             mySqlConnection =
                  new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Visual Studio\Projects\Bug Tracker - Assignment 2\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
 
-            String selcmd = "SELECT BugId, App, Error, Cause FROM BugTable ORDER BY BugId";
+            String selcmd = "SELECT App, Error, Cause FROM BugTable ORDER BY App";
 
             SqlCommand mySqlCommand = new SqlCommand(selcmd, mySqlConnection);
 
@@ -122,11 +125,10 @@ namespace BugTracker
                 while (mySqlDataReader.Read())
                 {
 
-                    lbxSimpleList.Items.Add("ID: " + mySqlDataReader["BugId"] + " App Name: " +
-                           mySqlDataReader["App"]);
+                    lbxSimpleList.Items.Add("App Name: " + mySqlDataReader["App"]);
                     lbxSimpleList.Items.Add("Error: " + mySqlDataReader["Error"]);
                     lbxSimpleList.Items.Add("Cause: " + mySqlDataReader["Cause"]);
-                    lbxSimpleList.Items.Add("                                    ");
+                    lbxSimpleList.Items.Add("");
 
 
                     //lbxSimpleView.Items.Add("ID: " + mySqlDataReader["BugId"]);
@@ -152,7 +154,7 @@ namespace BugTracker
             mySqlConnection =
                  new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Visual Studio\Projects\Bug Tracker - Assignment 2\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
 
-            String selcmd = "SELECT BugId, App, Error, Cause FROM BugTable WHERE BugId = " + txtsimpleview.Text;
+            String selcmd = "SELECT App, Error, Cause FROM BugTable WHERE App = '" + txtsimpleview.Text + "'";
 
             SqlCommand mySqlCommand = new SqlCommand(selcmd, mySqlConnection);
 
@@ -172,7 +174,7 @@ namespace BugTracker
                     //       + " Method Name: " + mySqlDataReader["MethodName"] + " Code Block: " + mySqlDataReader["CodeBlock"]
                     //       + " Line Number: " + mySqlDataReader["LineNumber"]);
 
-                    lbxSimpleView.Items.Add("ID: " + mySqlDataReader["BugId"]);
+                    //lbxSimpleView.Items.Add("ID: " + mySqlDataReader["BugId"]);
                     lbxSimpleView.Items.Add("App Name: " + mySqlDataReader["App"]);
                     lbxSimpleView.Items.Add("Error: " + mySqlDataReader["Error"]);
                     lbxSimpleView.Items.Add("Cause: " + mySqlDataReader["Cause"]);
@@ -192,14 +194,14 @@ namespace BugTracker
 
         public void cleartxtBoxes()
         {
-            txtbugID.Text = txtbugType.Text = txtcbName.Text = txtcfName.Text = txtlineNumb.Text = txtmthdName.Text = "";
+            txtAppName.Text = txtbugType.Text = txtcbName.Text = txtcfName.Text = txtlineNumb.Text = txtmthdName.Text = "";
         }
 
         public bool checkInputs()
         {
             bool rtnvalue = true;
 
-            if (string.IsNullOrEmpty(txtbugID.Text) ||
+            if (string.IsNullOrEmpty(txtAppName.Text) ||
                 string.IsNullOrEmpty(txtbugType.Text) ||
                 string.IsNullOrEmpty(txtcfName.Text) ||
                 string.IsNullOrEmpty(txtmthdName.Text) ||
@@ -215,7 +217,7 @@ namespace BugTracker
         }
 
 
-        public void insertRecord(String bugID, String bugtype, String classfilename, String methdName, String codeblock, String linenumb, String commandString)
+        public void insertRecord(String bugtype, String classfilename, String methdName, String codeblock, String linenumb, String commandString)
         {
 
             try
@@ -232,9 +234,26 @@ namespace BugTracker
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(bugID + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show(app + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        public void insertArchiveRecord(String app, String comment, String commandStringArchive)
+        {
+            try
+            {
+                SqlCommand cmdInsert = new SqlCommand(commandStringArchive, mySqlConnection);
+
+                cmdInsert.Parameters.AddWithValue("@app", app);
+                cmdInsert.Parameters.AddWithValue("@comment", comment);
+                cmdInsert.ExecuteNonQuery();
+
+            } catch (SqlException ex)
+            {
+
+            }
+        
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -242,12 +261,12 @@ namespace BugTracker
             if (checkInputs())
             {
 
-                //String commandString = "INSERT INTO BugTable(BugType, ClassFileName, MethodName, CodeBlock, LineNumber) VALUES ( @bugtype, @classfilename, @methodname, @codeblock, @linenumber)";
+               // String commandString = "INSERT INTO BugTable(BugType, ClassFileName, MethodName, CodeBlock, LineNumber) VALUES ( @bugtype, @classfilename, @methodname, @codeblock, @linenumber)";
                 //insertRecord(txtbugID.Text, txtbugType.Text, txtcfName.Text, txtmthdName.Text, txtcbName.Text, txtlineNumb.Text, commandString);
 
                 String commandString = "UPDATE BugTable SET BugType = '" + txtbugType.Text + "', ClassFileName = '"
                 + txtcfName.Text + "', MethodName = '" + txtmthdName.Text + "', CodeBlock = '" + txtcbName.Text +
-                "', LineNumber = '" + txtlineNumb.Text + "' WHERE BugId = '" + txtbugID.Text + "'";
+                "', LineNumber = '" + txtlineNumb.Text + "' WHERE App = '" + txtAppName.Text + "'";
                 SqlCommand cmdEditTable = new SqlCommand(commandString, mySqlConnection);
                 cmdEditTable.ExecuteNonQuery();
 
@@ -260,12 +279,20 @@ namespace BugTracker
         private void btnRemove_Click(object sender, EventArgs e)
         {
             //removes the row from the table from the specified row ID
-            int id = Int32.Parse(removeID.Text);
-            String commandString = "DELETE FROM BugTable WHERE BugId = " + id;
+            String commandString = "DELETE FROM BugTable WHERE App = '" + txtArchive.Text + "'";
+
+            String commandStringArchive = "INSERT INTO ArchiveTable (App, Comment) VALUES ( @app, @comment)";
+            insertArchiveRecord(txtArchive.Text, txtComments.Text, commandStringArchive);
+            SqlCommand cmdAddToArchive = new SqlCommand(commandStringArchive, mySqlConnection);
+            cmdAddToArchive.ExecuteNonQuery();
+
             SqlCommand cmdClearTable = new SqlCommand(commandString, mySqlConnection);
             cmdClearTable.ExecuteNonQuery();
+
             populateListBox();
-            //lbxBugs.Items.RemoveAt(bugID);
+            simpleBugView();
+            simpleBugList();
+            selectBugView();
         }
        
         private void btnEdit_Click(object sender, EventArgs e)
@@ -273,7 +300,7 @@ namespace BugTracker
             //edits the data within the columns for the row of the given ID
             String commandString = "UPDATE BugTable SET BugType = '" + txtbugType.Text + "', ClassFileName = '"
                 + txtcfName.Text + "', MethodName = '" + txtmthdName.Text + "', CodeBlock = '" + txtcbName.Text +
-                "', LineNumber = '" + txtlineNumb.Text + "' WHERE BugId = '" + txtbugID.Text + "'";
+                "', LineNumber = '" + txtlineNumb.Text + "' WHERE App = '" + txtAppName.Text + "'";
             SqlCommand cmdEditTable = new SqlCommand(commandString, mySqlConnection);
             cmdEditTable.ExecuteNonQuery();
             //different sql statement for doing the edit command
@@ -294,6 +321,16 @@ namespace BugTracker
         private void btnSimpleView_Click(object sender, EventArgs e)
         {
             simpleBugView();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
