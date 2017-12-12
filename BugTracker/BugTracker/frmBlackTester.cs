@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace BugTracker
 {
-    public partial class frmTester : Form
+    public partial class frmBlackTester : Form
     {
         SqlConnection mySqlConnection;
-        public frmTester()
+        public frmBlackTester()
         {
             InitializeComponent();
             populateListBox();
@@ -46,7 +46,7 @@ namespace BugTracker
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            var myForm = new frmDeveloper();
+            var myForm = new frmWhiteTest();
             myForm.Show();
         }
 

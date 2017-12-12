@@ -1,6 +1,6 @@
 ﻿namespace BugTracker
 {
-    partial class frmTester
+    partial class frmBlackTester
     {
         /// <summary>
         /// Required designer variable.
@@ -45,7 +45,7 @@
             this.btnOpen.Location = new System.Drawing.Point(127, 390);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(161, 62);
-            this.btnOpen.TabIndex = 0;
+            this.btnOpen.TabIndex = 4;
             this.btnOpen.Text = "Developer Bug Tracker";
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.button1_Click);
@@ -57,7 +57,7 @@
             this.label1.Location = new System.Drawing.Point(93, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 29);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 8;
             this.label1.Text = "Bug Tracker";
             // 
             // label2
@@ -67,7 +67,7 @@
             this.label2.Location = new System.Drawing.Point(21, 61);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 19);
-            this.label2.TabIndex = 2;
+            this.label2.TabIndex = 5;
             this.label2.Text = "App Name: ";
             // 
             // label3
@@ -77,7 +77,7 @@
             this.label3.Location = new System.Drawing.Point(21, 128);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 19);
-            this.label3.TabIndex = 3;
+            this.label3.TabIndex = 6;
             this.label3.Text = "Error: ";
             // 
             // label4
@@ -87,7 +87,7 @@
             this.label4.Location = new System.Drawing.Point(21, 244);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 19);
-            this.label4.TabIndex = 4;
+            this.label4.TabIndex = 7;
             this.label4.Text = "Cause: ";
             // 
             // txtError
@@ -95,7 +95,7 @@
             this.txtError.Location = new System.Drawing.Point(127, 128);
             this.txtError.Name = "txtError";
             this.txtError.Size = new System.Drawing.Size(161, 96);
-            this.txtError.TabIndex = 5;
+            this.txtError.TabIndex = 1;
             this.txtError.Text = "";
             // 
             // txtCause
@@ -103,7 +103,7 @@
             this.txtCause.Location = new System.Drawing.Point(127, 245);
             this.txtCause.Name = "txtCause";
             this.txtCause.Size = new System.Drawing.Size(161, 96);
-            this.txtCause.TabIndex = 6;
+            this.txtCause.TabIndex = 2;
             this.txtCause.Text = "";
             // 
             // txtAppName
@@ -111,7 +111,7 @@
             this.txtAppName.Location = new System.Drawing.Point(127, 61);
             this.txtAppName.Name = "txtAppName";
             this.txtAppName.Size = new System.Drawing.Size(161, 45);
-            this.txtAppName.TabIndex = 7;
+            this.txtAppName.TabIndex = 0;
             this.txtAppName.Text = "";
             // 
             // btnReport
@@ -120,7 +120,7 @@
             this.btnReport.Location = new System.Drawing.Point(127, 351);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(161, 33);
-            this.btnReport.TabIndex = 8;
+            this.btnReport.TabIndex = 3;
             this.btnReport.Text = "Report Bug";
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.button2_Click);

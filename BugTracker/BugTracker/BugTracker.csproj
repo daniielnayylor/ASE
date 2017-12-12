@@ -52,19 +52,28 @@
     <Compile Include="frmDeveloper.Designer.cs">
       <DependentUpon>frmDeveloper.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTester.cs">
+    <Compile Include="frmWhiteTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTester.Designer.cs">
-      <DependentUpon>frmTester.cs</DependentUpon>
+    <Compile Include="frmWhiteTest.Designer.cs">
+      <DependentUpon>frmWhiteTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBlackTester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBlackTester.Designer.cs">
+      <DependentUpon>frmBlackTester.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmDeveloper.resx">
       <DependentUpon>frmDeveloper.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTester.resx">
-      <DependentUpon>frmTester.cs</DependentUpon>
+    <EmbeddedResource Include="frmWhiteTest.resx">
+      <DependentUpon>frmWhiteTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBlackTester.resx">
+      <DependentUpon>frmBlackTester.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
