@@ -44,7 +44,6 @@
             this.txtcbName = new System.Windows.Forms.TextBox();
             this.txtlineNumb = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lbxBugView = new System.Windows.Forms.ListBox();
@@ -63,34 +62,50 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.btnCommentBug = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEditBug = new System.Windows.Forms.Button();
+            this.restoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.minimizedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.maximizedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
+            this.btnAdd.AllowDrop = true;
+            this.btnAdd.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Calibri", 12F);
-            this.btnAdd.Location = new System.Drawing.Point(110, 365);
+            this.btnAdd.Location = new System.Drawing.Point(165, 487);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(96, 30);
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Report Bug";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lbxBugs
             // 
+            this.lbxBugs.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.lbxBugs.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lbxBugs.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbxBugs.FormattingEnabled = true;
+            this.lbxBugs.HorizontalScrollbar = true;
             this.lbxBugs.ItemHeight = 19;
-            this.lbxBugs.Location = new System.Drawing.Point(705, 83);
+            this.lbxBugs.Location = new System.Drawing.Point(705, 122);
             this.lbxBugs.Name = "lbxBugs";
-            this.lbxBugs.Size = new System.Drawing.Size(262, 137);
+            this.lbxBugs.Size = new System.Drawing.Size(262, 133);
             this.lbxBugs.TabIndex = 23;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(466, 53);
+            this.label1.Location = new System.Drawing.Point(466, 92);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 26);
             this.label1.TabIndex = 30;
@@ -100,7 +115,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label2.Location = new System.Drawing.Point(12, 82);
+            this.label2.Location = new System.Drawing.Point(12, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 19);
             this.label2.TabIndex = 15;
@@ -110,7 +125,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label3.Location = new System.Drawing.Point(12, 128);
+            this.label3.Location = new System.Drawing.Point(12, 187);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 19);
             this.label3.TabIndex = 16;
@@ -120,7 +135,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label4.Location = new System.Drawing.Point(12, 174);
+            this.label4.Location = new System.Drawing.Point(12, 248);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(121, 19);
             this.label4.TabIndex = 17;
@@ -130,7 +145,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label5.Location = new System.Drawing.Point(12, 218);
+            this.label5.Location = new System.Drawing.Point(12, 316);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 19);
             this.label5.TabIndex = 18;
@@ -140,7 +155,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label6.Location = new System.Drawing.Point(12, 264);
+            this.label6.Location = new System.Drawing.Point(12, 376);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 19);
             this.label6.TabIndex = 19;
@@ -150,7 +165,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label7.Location = new System.Drawing.Point(12, 307);
+            this.label7.Location = new System.Drawing.Point(12, 441);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(99, 19);
             this.label7.TabIndex = 20;
@@ -158,78 +173,85 @@
             // 
             // txtAppName
             // 
+            this.txtAppName.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtAppName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAppName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAppName.Location = new System.Drawing.Point(182, 83);
+            this.txtAppName.Location = new System.Drawing.Point(182, 124);
+            this.txtAppName.Multiline = true;
             this.txtAppName.Name = "txtAppName";
-            this.txtAppName.Size = new System.Drawing.Size(180, 27);
+            this.txtAppName.Size = new System.Drawing.Size(180, 46);
             this.txtAppName.TabIndex = 0;
             // 
             // txtbugType
             // 
+            this.txtbugType.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtbugType.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbugType.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbugType.Location = new System.Drawing.Point(182, 127);
+            this.txtbugType.Location = new System.Drawing.Point(182, 184);
+            this.txtbugType.Multiline = true;
             this.txtbugType.Name = "txtbugType";
-            this.txtbugType.Size = new System.Drawing.Size(180, 27);
+            this.txtbugType.Size = new System.Drawing.Size(180, 46);
             this.txtbugType.TabIndex = 1;
             // 
             // txtcfName
             // 
+            this.txtcfName.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtcfName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtcfName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcfName.Location = new System.Drawing.Point(182, 175);
+            this.txtcfName.Location = new System.Drawing.Point(182, 244);
+            this.txtcfName.Multiline = true;
             this.txtcfName.Name = "txtcfName";
-            this.txtcfName.Size = new System.Drawing.Size(180, 27);
+            this.txtcfName.Size = new System.Drawing.Size(180, 46);
             this.txtcfName.TabIndex = 2;
             // 
             // txtmthdName
             // 
+            this.txtmthdName.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtmthdName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtmthdName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmthdName.Location = new System.Drawing.Point(182, 219);
+            this.txtmthdName.Location = new System.Drawing.Point(182, 304);
+            this.txtmthdName.Multiline = true;
             this.txtmthdName.Name = "txtmthdName";
-            this.txtmthdName.Size = new System.Drawing.Size(180, 27);
+            this.txtmthdName.Size = new System.Drawing.Size(180, 49);
             this.txtmthdName.TabIndex = 3;
             // 
             // txtcbName
             // 
+            this.txtcbName.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtcbName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtcbName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcbName.Location = new System.Drawing.Point(182, 265);
+            this.txtcbName.Location = new System.Drawing.Point(182, 364);
+            this.txtcbName.Multiline = true;
             this.txtcbName.Name = "txtcbName";
-            this.txtcbName.Size = new System.Drawing.Size(180, 27);
+            this.txtcbName.Size = new System.Drawing.Size(180, 46);
             this.txtcbName.TabIndex = 4;
             // 
             // txtlineNumb
             // 
+            this.txtlineNumb.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtlineNumb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtlineNumb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtlineNumb.Location = new System.Drawing.Point(182, 308);
+            this.txtlineNumb.Location = new System.Drawing.Point(182, 424);
+            this.txtlineNumb.Multiline = true;
             this.txtlineNumb.Name = "txtlineNumb";
-            this.txtlineNumb.Size = new System.Drawing.Size(180, 27);
+            this.txtlineNumb.Size = new System.Drawing.Size(180, 46);
             this.txtlineNumb.TabIndex = 5;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(143, 31);
+            this.label8.Location = new System.Drawing.Point(553, 32);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(128, 29);
+            this.label8.Size = new System.Drawing.Size(272, 29);
             this.label8.TabIndex = 29;
-            this.label8.Text = "Bug Tracker";
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Font = new System.Drawing.Font("Calibri", 12F);
-            this.btnEdit.Location = new System.Drawing.Point(230, 365);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(96, 30);
-            this.btnEdit.TabIndex = 7;
-            this.btnEdit.Text = "Edit Bug";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.label8.Text = "Bug Tracker - White Tester";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(742, 53);
+            this.label10.Location = new System.Drawing.Point(742, 92);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(170, 26);
             this.label10.TabIndex = 31;
@@ -239,7 +261,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(727, 248);
+            this.label11.Location = new System.Drawing.Point(727, 287);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(185, 26);
             this.label11.TabIndex = 34;
@@ -247,27 +269,32 @@
             // 
             // lbxBugView
             // 
+            this.lbxBugView.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.lbxBugView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lbxBugView.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbxBugView.FormattingEnabled = true;
+            this.lbxBugView.HorizontalScrollbar = true;
             this.lbxBugView.ItemHeight = 19;
-            this.lbxBugView.Location = new System.Drawing.Point(705, 277);
+            this.lbxBugView.Location = new System.Drawing.Point(705, 316);
             this.lbxBugView.Name = "lbxBugView";
-            this.lbxBugView.Size = new System.Drawing.Size(262, 137);
+            this.lbxBugView.Size = new System.Drawing.Size(262, 133);
             this.lbxBugView.TabIndex = 24;
             // 
             // txtchoosebug
             // 
+            this.txtchoosebug.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtchoosebug.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtchoosebug.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtchoosebug.Location = new System.Drawing.Point(791, 430);
+            this.txtchoosebug.Location = new System.Drawing.Point(791, 469);
             this.txtchoosebug.Name = "txtchoosebug";
-            this.txtchoosebug.Size = new System.Drawing.Size(176, 27);
+            this.txtchoosebug.Size = new System.Drawing.Size(176, 20);
             this.txtchoosebug.TabIndex = 10;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label12.Location = new System.Drawing.Point(701, 429);
+            this.label12.Location = new System.Drawing.Point(701, 468);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(84, 19);
             this.label12.TabIndex = 28;
@@ -275,30 +302,35 @@
             // 
             // btnViewBug
             // 
+            this.btnViewBug.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnViewBug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewBug.Font = new System.Drawing.Font("Calibri", 12F);
-            this.btnViewBug.Location = new System.Drawing.Point(791, 463);
+            this.btnViewBug.Location = new System.Drawing.Point(791, 502);
             this.btnViewBug.Name = "btnViewBug";
             this.btnViewBug.Size = new System.Drawing.Size(104, 30);
             this.btnViewBug.TabIndex = 11;
             this.btnViewBug.Text = "View Bug";
-            this.btnViewBug.UseVisualStyleBackColor = true;
+            this.btnViewBug.UseVisualStyleBackColor = false;
             this.btnViewBug.Click += new System.EventHandler(this.btnViewBug_Click);
             // 
             // lbxSimpleList
             // 
+            this.lbxSimpleList.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.lbxSimpleList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lbxSimpleList.Font = new System.Drawing.Font("Calibri", 12F);
             this.lbxSimpleList.FormattingEnabled = true;
+            this.lbxSimpleList.HorizontalScrollbar = true;
             this.lbxSimpleList.ItemHeight = 19;
-            this.lbxSimpleList.Location = new System.Drawing.Point(422, 82);
+            this.lbxSimpleList.Location = new System.Drawing.Point(422, 121);
             this.lbxSimpleList.Name = "lbxSimpleList";
-            this.lbxSimpleList.Size = new System.Drawing.Size(262, 137);
+            this.lbxSimpleList.Size = new System.Drawing.Size(262, 133);
             this.lbxSimpleList.TabIndex = 21;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label13.Location = new System.Drawing.Point(418, 429);
+            this.label13.Location = new System.Drawing.Point(418, 468);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(84, 19);
             this.label13.TabIndex = 27;
@@ -306,17 +338,19 @@
             // 
             // txtsimpleview
             // 
+            this.txtsimpleview.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtsimpleview.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtsimpleview.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtsimpleview.Location = new System.Drawing.Point(508, 430);
+            this.txtsimpleview.Location = new System.Drawing.Point(508, 469);
             this.txtsimpleview.Name = "txtsimpleview";
-            this.txtsimpleview.Size = new System.Drawing.Size(176, 27);
+            this.txtsimpleview.Size = new System.Drawing.Size(176, 20);
             this.txtsimpleview.TabIndex = 8;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(451, 248);
+            this.label14.Location = new System.Drawing.Point(451, 287);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(158, 26);
             this.label14.TabIndex = 33;
@@ -324,30 +358,35 @@
             // 
             // lbxSimpleView
             // 
+            this.lbxSimpleView.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.lbxSimpleView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lbxSimpleView.Font = new System.Drawing.Font("Calibri", 12F);
             this.lbxSimpleView.FormattingEnabled = true;
+            this.lbxSimpleView.HorizontalScrollbar = true;
             this.lbxSimpleView.ItemHeight = 19;
-            this.lbxSimpleView.Location = new System.Drawing.Point(422, 277);
+            this.lbxSimpleView.Location = new System.Drawing.Point(422, 316);
             this.lbxSimpleView.Name = "lbxSimpleView";
-            this.lbxSimpleView.Size = new System.Drawing.Size(262, 137);
+            this.lbxSimpleView.Size = new System.Drawing.Size(262, 133);
             this.lbxSimpleView.TabIndex = 22;
             // 
             // btnSimpleView
             // 
+            this.btnSimpleView.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnSimpleView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSimpleView.Font = new System.Drawing.Font("Calibri", 12F);
-            this.btnSimpleView.Location = new System.Drawing.Point(508, 463);
+            this.btnSimpleView.Location = new System.Drawing.Point(508, 502);
             this.btnSimpleView.Name = "btnSimpleView";
             this.btnSimpleView.Size = new System.Drawing.Size(104, 30);
             this.btnSimpleView.TabIndex = 9;
             this.btnSimpleView.Text = "View Bug";
-            this.btnSimpleView.UseVisualStyleBackColor = true;
+            this.btnSimpleView.UseVisualStyleBackColor = false;
             this.btnSimpleView.Click += new System.EventHandler(this.btnSimpleView_Click);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(1144, 453);
+            this.label17.Location = new System.Drawing.Point(1067, 92);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(135, 26);
             this.label17.TabIndex = 35;
@@ -355,26 +394,31 @@
             // 
             // txtcommentbug
             // 
+            this.txtcommentbug.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtcommentbug.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtcommentbug.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtcommentbug.Location = new System.Drawing.Point(1103, 544);
+            this.txtcommentbug.Location = new System.Drawing.Point(1008, 238);
             this.txtcommentbug.Multiline = true;
             this.txtcommentbug.Name = "txtcommentbug";
-            this.txtcommentbug.Size = new System.Drawing.Size(262, 141);
+            this.txtcommentbug.Size = new System.Drawing.Size(262, 258);
             this.txtcommentbug.TabIndex = 36;
             // 
             // txtcommentappname
             // 
+            this.txtcommentappname.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtcommentappname.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtcommentappname.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtcommentappname.Location = new System.Drawing.Point(1189, 492);
+            this.txtcommentappname.Location = new System.Drawing.Point(1008, 155);
+            this.txtcommentappname.Multiline = true;
             this.txtcommentappname.Name = "txtcommentappname";
-            this.txtcommentappname.Size = new System.Drawing.Size(176, 27);
+            this.txtcommentappname.Size = new System.Drawing.Size(262, 46);
             this.txtcommentappname.TabIndex = 37;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label18.Location = new System.Drawing.Point(1099, 500);
+            this.label18.Location = new System.Drawing.Point(1098, 125);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(84, 19);
             this.label18.TabIndex = 38;
@@ -384,7 +428,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label19.Location = new System.Drawing.Point(1177, 522);
+            this.label19.Location = new System.Drawing.Point(1098, 204);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(86, 19);
             this.label19.TabIndex = 39;
@@ -392,20 +436,109 @@
             // 
             // btnCommentBug
             // 
+            this.btnCommentBug.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnCommentBug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCommentBug.Font = new System.Drawing.Font("Calibri", 12F);
-            this.btnCommentBug.Location = new System.Drawing.Point(1149, 690);
+            this.btnCommentBug.Location = new System.Drawing.Point(1072, 502);
             this.btnCommentBug.Name = "btnCommentBug";
             this.btnCommentBug.Size = new System.Drawing.Size(130, 30);
             this.btnCommentBug.TabIndex = 40;
             this.btnCommentBug.Text = "Comment Bug";
-            this.btnCommentBug.UseVisualStyleBackColor = true;
+            this.btnCommentBug.UseVisualStyleBackColor = false;
             this.btnCommentBug.Click += new System.EventHandler(this.btnCommentBug_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(217, 92);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(109, 26);
+            this.label9.TabIndex = 41;
+            this.label9.Text = "Bug Detials";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.menuStrip1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1288, 27);
+            this.menuStrip1.TabIndex = 46;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.closeToolStripMenuItem,
+            this.restoreToolStripMenuItem,
+            this.minimizedToolStripMenuItem,
+            this.maximizedToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 23);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // closeToolStripMenuItem
+            // 
+            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.closeToolStripMenuItem.Text = "Close";
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
+            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            // 
+            // btnEditBug
+            // 
+            this.btnEditBug.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnEditBug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditBug.Font = new System.Drawing.Font("Calibri", 12F);
+            this.btnEditBug.Location = new System.Drawing.Point(277, 487);
+            this.btnEditBug.Name = "btnEditBug";
+            this.btnEditBug.Size = new System.Drawing.Size(96, 30);
+            this.btnEditBug.TabIndex = 47;
+            this.btnEditBug.Text = "Edit Bug";
+            this.btnEditBug.UseVisualStyleBackColor = false;
+            this.btnEditBug.Click += new System.EventHandler(this.btnEditBug_Click);
+            // 
+            // restoreToolStripMenuItem
+            // 
+            this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
+            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.restoreToolStripMenuItem.Text = "Restore";
+            this.restoreToolStripMenuItem.Click += new System.EventHandler(this.restoreToolStripMenuItem_Click);
+            // 
+            // minimizedToolStripMenuItem
+            // 
+            this.minimizedToolStripMenuItem.Name = "minimizedToolStripMenuItem";
+            this.minimizedToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.minimizedToolStripMenuItem.Text = "Minimize";
+            this.minimizedToolStripMenuItem.Click += new System.EventHandler(this.minimizedToolStripMenuItem_Click);
+            // 
+            // maximizedToolStripMenuItem
+            // 
+            this.maximizedToolStripMenuItem.Name = "maximizedToolStripMenuItem";
+            this.maximizedToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.maximizedToolStripMenuItem.Text = "Maximize";
+            this.maximizedToolStripMenuItem.Click += new System.EventHandler(this.maximizedToolStripMenuItem_Click);
             // 
             // frmWhiteTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1444, 799);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1288, 558);
+            this.Controls.Add(this.btnEditBug);
+            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.btnCommentBug);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.txtcommentappname);
@@ -424,7 +557,6 @@
             this.Controls.Add(this.lbxBugView);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtlineNumb);
             this.Controls.Add(this.txtcbName);
@@ -441,8 +573,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbxBugs);
             this.Controls.Add(this.btnAdd);
+            this.HelpButton = true;
             this.Name = "frmWhiteTest";
-            this.Text = "1";
+            this.Text = "Bug Tracker";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -466,7 +601,6 @@
         private System.Windows.Forms.TextBox txtcbName;
         private System.Windows.Forms.TextBox txtlineNumb;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ListBox lbxBugView;
@@ -485,6 +619,16 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button btnCommentBug;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnEditBug;
+        private System.Windows.Forms.ToolStripMenuItem restoreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem minimizedToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem maximizedToolStripMenuItem;
     }
 }
 

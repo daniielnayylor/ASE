@@ -23,7 +23,7 @@ namespace BugTracker
         public void populateListBox()
         {
             mySqlConnection =
-                 new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Visual Studio\Projects\Bug Tracker - Assignment 2\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
+                 new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Source\Repos\ASE\BugTracker\BugTracker\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
 
             String selcmd = "SELECT App, Error, Cause FROM BugTable ORDER BY App";
 
@@ -43,11 +43,6 @@ namespace BugTracker
                 // MessageBox.Show(bugID + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var myForm = new frmWhiteTest();
-            myForm.Show();
         }
 
 
@@ -103,6 +98,35 @@ namespace BugTracker
                 cleartxtBoxes();
                 MessageBox.Show("Bug Successfully Reported");
             }
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var myForm = new frmHelp();
+            myForm.Show();
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+       
+
+        private void restoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+
+        }
+
+        private void minimizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void maximizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

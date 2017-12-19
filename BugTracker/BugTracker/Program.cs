@@ -16,7 +16,7 @@ namespace BugTracker
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmBlackTester());
+            Application.Run(new frmHomePage());
         }
     }
 }

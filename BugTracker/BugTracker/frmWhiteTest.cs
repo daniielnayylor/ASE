@@ -23,7 +23,7 @@ namespace BugTracker
         public void populateListBox()
         {
             mySqlConnection =
-                 new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Visual Studio\Projects\Bug Tracker - Assignment 2\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
+                 new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Source\Repos\ASE\BugTracker\BugTracker\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
 
             String selcmd = "SELECT App, BugType, ClassFileName, MethodName, CodeBlock, LineNumber FROM BugTable ORDER BY App";
 
@@ -45,8 +45,8 @@ namespace BugTracker
                     lbxBugs.Items.Add("Class File Name: " + mySqlDataReader["ClassFileName"]);
                     lbxBugs.Items.Add("Method Name: " + mySqlDataReader["MethodName"]);
                     lbxBugs.Items.Add("Code Block: " + mySqlDataReader["CodeBlock"]);
-                    lbxBugs.Items.Add(" Line Number: " + mySqlDataReader["LineNumber"]);
-                    lbxBugs.Items.Add("");
+                    lbxBugs.Items.Add("Line Number: " + mySqlDataReader["LineNumber"]);
+                    lbxBugs.Items.Add("--------------------------");
 
 
                 }
@@ -65,7 +65,7 @@ namespace BugTracker
         public void selectBugView()
         {
             mySqlConnection =
-                 new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Visual Studio\Projects\Bug Tracker - Assignment 2\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
+                 new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Source\Repos\ASE\BugTracker\BugTracker\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
 
             String selcmd = "SELECT App, BugType, ClassFileName, MethodName, CodeBlock, LineNumber FROM BugTable WHERE App = '" + txtchoosebug.Text + "'";
 
@@ -93,6 +93,7 @@ namespace BugTracker
                     lbxBugView.Items.Add("Method Name: " + mySqlDataReader["MethodName"]);
                     lbxBugView.Items.Add("Code Block: " + mySqlDataReader["CodeBlock"]);
                     lbxBugView.Items.Add("Line Number: " + mySqlDataReader["LineNumber"]);
+                    lbxBugView.Items.Add("-----------------------");
 
                 }
             }
@@ -108,7 +109,7 @@ namespace BugTracker
         public void simpleBugList()
         {
             mySqlConnection =
-                 new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Visual Studio\Projects\Bug Tracker - Assignment 2\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
+                 new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Source\Repos\ASE\BugTracker\BugTracker\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
 
             String selcmd = "SELECT App, Error, Cause FROM BugTable ORDER BY App";
 
@@ -128,13 +129,10 @@ namespace BugTracker
                     lbxSimpleList.Items.Add("App Name: " + mySqlDataReader["App"]);
                     lbxSimpleList.Items.Add("Error: " + mySqlDataReader["Error"]);
                     lbxSimpleList.Items.Add("Cause: " + mySqlDataReader["Cause"]);
-                    lbxSimpleList.Items.Add("");
+                    lbxSimpleList.Items.Add("----------------------");
 
 
-                    //lbxSimpleView.Items.Add("ID: " + mySqlDataReader["BugId"]);
-                    //lbxSimpleView.Items.Add("App Name: " + mySqlDataReader["App"]);
-                    //lbxSimpleView.Items.Add("Error: " + mySqlDataReader["Error"]);
-                    //lbxSimpleView.Items.Add("Cause: " + mySqlDataReader["Cause"]);
+                
 
 
                 }
@@ -152,7 +150,7 @@ namespace BugTracker
         public void simpleBugView()
         {
             mySqlConnection =
-                 new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Visual Studio\Projects\Bug Tracker - Assignment 2\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
+                 new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Source\Repos\ASE\BugTracker\BugTracker\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
 
             String selcmd = "SELECT App, Error, Cause FROM BugTable WHERE App = '" + txtsimpleview.Text + "'";
 
@@ -178,7 +176,8 @@ namespace BugTracker
                     lbxSimpleView.Items.Add("App Name: " + mySqlDataReader["App"]);
                     lbxSimpleView.Items.Add("Error: " + mySqlDataReader["Error"]);
                     lbxSimpleView.Items.Add("Cause: " + mySqlDataReader["Cause"]);
-                  
+                    lbxSimpleView.Items.Add("------------------------");
+
 
                 }
             }
@@ -217,52 +216,48 @@ namespace BugTracker
         }
 
 
-        //public void insertRecord(String bugtype, String classfilename, String methdName, String codeblock, String linenumb, String commandString)
-        //{
-
-        //    try
-        //    {
-        //        SqlCommand cmdInsert = new SqlCommand(commandString, mySqlConnection);
-
-        //        //cmdInsert.Parameters.AddWithValue("@bugid", bugID);
-        //        cmdInsert.Parameters.AddWithValue("@bugtype", bugtype);
-        //        cmdInsert.Parameters.AddWithValue("@classfilename", classfilename);
-        //        cmdInsert.Parameters.AddWithValue("@methodname", methdName);
-        //        cmdInsert.Parameters.AddWithValue("@codeblock", codeblock);
-        //        cmdInsert.Parameters.AddWithValue("@linenumber", linenumb);
-        //        cmdInsert.ExecuteNonQuery();
-        //    }
-        //    catch (SqlException ex)
-        //    {
-        //        //MessageBox.Show(app + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-
-        //}
-
-        public void insertRecord(String app, String comment, String commandString)
+        public void insertRecord(String appname, String bugtype, String classfilename, String methdName, String codeblock, String linenumb, String commandString)
         {
+
             try
             {
                 SqlCommand cmdInsert = new SqlCommand(commandString, mySqlConnection);
 
-                cmdInsert.Parameters.AddWithValue("@app", app);
-                cmdInsert.Parameters.AddWithValue("@comment", comment);
+                cmdInsert.Parameters.AddWithValue("@app", appname);
+                cmdInsert.Parameters.AddWithValue("@bugtype", bugtype);
+                cmdInsert.Parameters.AddWithValue("@classfilename", classfilename);
+                cmdInsert.Parameters.AddWithValue("@methodname", methdName);
+                cmdInsert.Parameters.AddWithValue("@codeblock", codeblock);
+                cmdInsert.Parameters.AddWithValue("@linenumber", linenumb);
                 cmdInsert.ExecuteNonQuery();
-
-            } catch (SqlException ex)
+            }
+            catch (SqlException ex)
             {
-                MessageBox.Show(app + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(appname + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
 
+
+
         private void btnAdd_Click(object sender, EventArgs e)
+        {
+                if (checkInputs())
+                {
+
+                    String commandString = "INSERT INTO BugTable(App, BugType, ClassFileName, MethodName, CodeBlock, LineNumber) VALUES (@app, @bugtype, @classfilename, @methodname, @codeblock, @linenumber)";
+
+                    insertRecord(txtAppName.Text, txtbugType.Text, txtcfName.Text, txtmthdName.Text, txtcbName.Text, txtlineNumb.Text, commandString);
+                    populateListBox();
+                    cleartxtBoxes();
+                    MessageBox.Show("Bug Successfully Reported");
+                }
+        }
+
+        private void btnEditBug_Click(object sender, EventArgs e)
         {
             if (checkInputs())
             {
-
-               // String commandString = "INSERT INTO BugTable(BugType, ClassFileName, MethodName, CodeBlock, LineNumber) VALUES ( @bugtype, @classfilename, @methodname, @codeblock, @linenumber)";
-                //insertRecord(txtbugID.Text, txtbugType.Text, txtcfName.Text, txtmthdName.Text, txtcbName.Text, txtlineNumb.Text, commandString);
 
                 String commandString = "UPDATE BugTable SET BugType = '" + txtbugType.Text + "', ClassFileName = '"
                 + txtcfName.Text + "', MethodName = '" + txtmthdName.Text + "', CodeBlock = '" + txtcbName.Text +
@@ -275,44 +270,24 @@ namespace BugTracker
             }
         }
 
-
-        private void btnRemove_Click(object sender, EventArgs e)
+        public void insertRecord(String app, String comment, String commandString)
         {
-            //removes the row from the table from the specified row ID
-            String commandString = "DELETE FROM BugTable WHERE App = '" + txtArchive.Text + "'";
+            try
+            {
+                SqlCommand cmdInsert = new SqlCommand(commandString, mySqlConnection);
 
+                cmdInsert.Parameters.AddWithValue("@app", app);
+                cmdInsert.Parameters.AddWithValue("@comment", comment);
+                cmdInsert.ExecuteNonQuery();
 
-            String commandStringArchive = "INSERT INTO ArchiveTable (App, Comment) VALUES ( @app, @comment)";
-            insertRecord(txtArchive.Text, txtcommentarchive.Text, commandStringArchive);
-
-
-
-            //SqlCommand cmdClearTable = new SqlCommand(commandString, mySqlConnection);
-            //cmdClearTable.ExecuteNonQuery();
-
-            populateListBox();
-            simpleBugView();
-            simpleBugList();
-            selectBugView();
-        }
-       
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            //edits the data within the columns for the row of the given ID
-            String commandString = "UPDATE BugTable SET BugType = '" + txtbugType.Text + "', ClassFileName = '"
-                + txtcfName.Text + "', MethodName = '" + txtmthdName.Text + "', CodeBlock = '" + txtcbName.Text +
-                "', LineNumber = '" + txtlineNumb.Text + "' WHERE App = '" + txtAppName.Text + "'";
-            SqlCommand cmdEditTable = new SqlCommand(commandString, mySqlConnection);
-            cmdEditTable.ExecuteNonQuery();
-            //different sql statement for doing the edit command
-            //String commandString = "UPDATE BugTable SET BugType = @bugtype, ClassFileName = @classfilename. MethodName = @methodname, CodeBlock = @codeblock, LineNumber = @linenumber Where BugId = @bugid";
-            //cmdEditTable.Parameters.AddWithValue("@bigtype", txtbugType.Text);
-
-            
-            populateListBox();
-
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(app + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
+
 
         private void btnViewBug_Click(object sender, EventArgs e)
         {
@@ -330,7 +305,37 @@ namespace BugTracker
         {
             String commandStringArchive = "INSERT INTO CommentTable (App, Comment) VALUES ( @app, @comment)";
             insertRecord(txtcommentappname.Text, txtcommentbug.Text, commandStringArchive);
+            txtcommentappname.Text = "";
+            txtcommentbug.Text = "";
+            MessageBox.Show("Comment Submitted");
 
+
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var myForm = new frmHelp();
+            myForm.Show();
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void restoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+        }
+
+        private void minimizedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void maximizedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }
