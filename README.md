@@ -1,1 +1,2 @@
-# ASE
+# Advanced Software Engineering - Bug Tracker Assignment
+An application to allow three differnet types of users, a black box tester, white box tester and a developer to report, edit and track bugs for application they are developing or testing. The black box tester has the feature of submiting a bug, the white box tester has the features of view previously submited bugs and report their own as well as editing previous bugs. The developer can access all three types of forms and can also comment of bugs and archive them if they have been fixed.
