@@ -16,28 +16,48 @@ namespace BugTracker
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// A small message box to remin the user they are already on the help page instead of opening a new help page from the existing help page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("You're aleady at the help page!");
         }
-
+        /// <summary>
+        /// Closes the current form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Minimizes the form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void minimizeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
+        /// <summary>
+        /// Maximizes the form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void maximizeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
 
         }
-
+        /// <summary>
+        /// Restores the size of the form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void restoreToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;

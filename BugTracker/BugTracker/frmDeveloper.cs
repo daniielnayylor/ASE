@@ -8,9 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace BugTracker
 {
+    /// <summary>
+<<<<<<< HEAD
+    /// Opens up a connection to the database and tables when the form is opened so the database can be read or written to.
+=======
+    /// 
+>>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
+    /// </summary>
     public partial class frmDeveloper : Form
     {
         SqlConnection mySqlConnection;
@@ -18,9 +24,15 @@ namespace BugTracker
         {
             openConnection();
             InitializeComponent();
-           
-        }
+<<<<<<< HEAD
 
+=======
+           
+>>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
+        }
+        /// <summary>
+        /// Opens the connection to the database using the SQL Database connection string when the form is opened
+        /// </summary>
         public void openConnection()
         {
             mySqlConnection =
@@ -45,6 +57,9 @@ namespace BugTracker
             }
         }
 
+        /// <summary>
+        /// Shows the contents of the 'BugTable' table from the application name that has been chosen
+        /// </summary>
         public void simpleBugList()
         {
             mySqlConnection =
@@ -90,7 +105,9 @@ namespace BugTracker
             }
 
         }
-
+        /// <summary>
+        /// Shows the contents of the 'ArchiveTable' table from the application name that has been chosen
+        /// </summary>
         public void archvieBugList()
         {
             mySqlConnection =
@@ -129,7 +146,9 @@ namespace BugTracker
             }
 
         }
-
+        /// <summary>
+        /// Shows the contents of the 'CommentTable' table from the application name that has been chosen
+        /// </summary>
         public void commentBugList()
         {
             mySqlConnection =
@@ -153,11 +172,6 @@ namespace BugTracker
                     lbxCommentList.Items.Add("Archived Comment: ");
                     lbxCommentList.Items.Add(mySqlDataReader["Comment"]);
                     lbxCommentList.Items.Add("---------------------------------------------------");
-
-
-
-
-
                 }
             }
 
@@ -170,18 +184,35 @@ namespace BugTracker
         }
 
 
-
+        /// <summary>
+        /// Opens the help form from the help menu item
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var myForm = new frmHelp();
             myForm.Show();
         }
-
+        /// <summary>
+<<<<<<< HEAD
+        /// Closes the current form
+=======
+        /// Closes the 
+>>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Creates the references for app and comment for the archive table
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="comment"></param>
+        /// <param name="commandString"></param>
         public void archiveRecord(String app, String comment, String commandString)
         {
             try
@@ -199,7 +230,12 @@ namespace BugTracker
             }
 
         }
-
+        /// <summary>
+        /// Creates the references for app and comment for the comment table
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="comment"></param>
+        /// <param name="commandString"></param>
         public void commentRecord(String app, String comment, String commandString)
         {
             try
@@ -218,38 +254,65 @@ namespace BugTracker
 
         }
 
-
+        /// <summary>
+        /// Displays the BugTable contents in the Bug listView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBugList_Click(object sender, EventArgs e)
         {
             simpleBugList();
         }
-
+        /// <summary>
+        /// Displays the ArchiveTable contents in the Archive listView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnArchiveList_Click(object sender, EventArgs e)
         {
             archvieBugList();
         }
-
+        /// <summary>
+        /// Displays the CommentTable contents in the Comment listView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCommentList_Click(object sender, EventArgs e)
         {
             commentBugList();
         }
-
+        /// <summary>
+        /// Restores the size of the form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void restoreToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
-
         }
-
+        /// <summary>
+        /// Minimizes the size of the form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void minimizedToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
+        /// <summary>
+        /// Maximizes the size of the form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void maximizedToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
         }
-
+        /// <summary>
+        /// Adds the app name and comment into the CommentTable and shows the changes in the Comment listView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCommentBug_Click(object sender, EventArgs e)
         {
 
@@ -260,7 +323,11 @@ namespace BugTracker
 
 
         }
-
+        /// <summary>
+        /// Adds the app name and comment into the ArchiveTable and shows the changes in the Archive listView and also removes the bug information and comments from BugTable and CommentTable
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRemove_Click_1(object sender, EventArgs e)
         {
             //removes the row from the table from the specified row ID

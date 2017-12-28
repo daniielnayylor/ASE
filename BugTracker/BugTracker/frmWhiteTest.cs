@@ -11,6 +11,15 @@ using System.Windows.Forms;
 
 namespace BugTracker
 {
+<<<<<<< HEAD
+    /// <summary>
+    /// Creates a connection for the database and displays the BugTable contents in the appropriate lists whenn the form is opened.
+    /// </summary>
+=======
+/// <summary>
+/// 
+/// </summary>
+>>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
     public partial class frmWhiteTest : Form
     {
         SqlConnection mySqlConnection;
@@ -20,6 +29,13 @@ namespace BugTracker
             populateListBox();
             simpleBugList();
         }
+        /// <summary>
+<<<<<<< HEAD
+        /// Opens up the connection to the SQL database and shows the contents of the 'BugTable' table in order of the app name.
+=======
+        /// Opens up the connection to the SQL database and shows the contents of the 'BugTable' table in order of the app name
+>>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
+        /// </summary>
         public void populateListBox()
         {
             mySqlConnection =
@@ -61,7 +77,13 @@ namespace BugTracker
         }
 
 
-
+        /// <summary>
+<<<<<<< HEAD
+        /// Shows the contents of the 'BugTable' table from the application name that has been chosen.
+=======
+        /// Shows the contents of the 'BugTable' table from the application name that has been chosen
+>>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
+        /// </summary>
         public void selectBugView()
         {
             mySqlConnection =
@@ -82,11 +104,6 @@ namespace BugTracker
                 while (mySqlDataReader.Read())
                 {
 
-                    //lbxBugView.Items.Add("ID: " + mySqlDataReader["BugId"] + " Bug Type: " +
-                    //       mySqlDataReader["BugType"] + " Class File Name: " + mySqlDataReader["ClassFileName"]
-                    //       + " Method Name: " + mySqlDataReader["MethodName"] + " Code Block: " + mySqlDataReader["CodeBlock"]
-                    //       + " Line Number: " + mySqlDataReader["LineNumber"]);
-
                     lbxBugView.Items.Add("App Name: " + mySqlDataReader["App"]);
                     lbxBugView.Items.Add("Bug Type: " + mySqlDataReader["BugType"]);
                     lbxBugView.Items.Add("Class Fine Name: " + mySqlDataReader["ClassFileName"]);
@@ -105,7 +122,13 @@ namespace BugTracker
             }
 
         }
-
+        /// <summary>
+<<<<<<< HEAD
+        /// Show a simplified version of the BugTable that has been entered by a blackbox tester.
+=======
+        /// Show a simplified version of the BugTable that has been entered by a blackbox tester
+>>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
+        /// </summary>
         public void simpleBugList()
         {
             mySqlConnection =
@@ -125,16 +148,10 @@ namespace BugTracker
 
                 while (mySqlDataReader.Read())
                 {
-
                     lbxSimpleList.Items.Add("App Name: " + mySqlDataReader["App"]);
                     lbxSimpleList.Items.Add("Error: " + mySqlDataReader["Error"]);
                     lbxSimpleList.Items.Add("Cause: " + mySqlDataReader["Cause"]);
                     lbxSimpleList.Items.Add("----------------------");
-
-
-                
-
-
                 }
             }
 
@@ -143,10 +160,15 @@ namespace BugTracker
 
                 // MessageBox.Show(bugID + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
-
+        /// <summary>
+<<<<<<< HEAD
+        /// Show a simplified version of the BugTable that has been entered by a blackbox tester from the app name chosen by the user.
+=======
+        ///  Show a simplified version of the BugTable that has been entered by a blackbox tester from the app name chosen by the user
+>>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
+        /// </summary>
         public void simpleBugView()
         {
             mySqlConnection =
@@ -190,7 +212,13 @@ namespace BugTracker
 
         }
 
-
+        /// <summary>
+<<<<<<< HEAD
+        /// Clears the text boxes when a bug has been edited or reported.
+=======
+        /// Clears the text boxes when a bug has been edited or reported
+>>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
+        /// </summary>
         public void cleartxtBoxes()
         {
             txtAppName.Text = txtbugType.Text = txtcbName.Text = txtcfName.Text = txtlineNumb.Text = txtmthdName.Text = "";
@@ -215,7 +243,20 @@ namespace BugTracker
 
         }
 
-
+        /// <summary>
+<<<<<<< HEAD
+        /// Creates the references of the more advanced detials for the BugTable.
+=======
+        /// Inserts a record into the BugTable as a white box tester with more details 
+>>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
+        /// </summary>
+        /// <param name="appname"></param>
+        /// <param name="bugtype"></param>
+        /// <param name="classfilename"></param>
+        /// <param name="methdName"></param>
+        /// <param name="codeblock"></param>
+        /// <param name="linenumb"></param>
+        /// <param name="commandString"></param>
         public void insertRecord(String appname, String bugtype, String classfilename, String methdName, String codeblock, String linenumb, String commandString)
         {
 
@@ -239,7 +280,15 @@ namespace BugTracker
         }
 
 
-
+        /// <summary>
+<<<<<<< HEAD
+        /// Inserts a record into the BugTable as a white box tester with more details.
+=======
+        /// 
+>>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
                 if (checkInputs())
@@ -248,12 +297,21 @@ namespace BugTracker
                     String commandString = "INSERT INTO BugTable(App, BugType, ClassFileName, MethodName, CodeBlock, LineNumber) VALUES (@app, @bugtype, @classfilename, @methodname, @codeblock, @linenumber)";
 
                     insertRecord(txtAppName.Text, txtbugType.Text, txtcfName.Text, txtmthdName.Text, txtcbName.Text, txtlineNumb.Text, commandString);
-                    populateListBox();
+                    populateListBox();  
+                    simpleBugList();
                     cleartxtBoxes();
                     MessageBox.Show("Bug Successfully Reported");
                 }
         }
-
+        /// <summary>
+<<<<<<< HEAD
+        /// Edits a single row of the BugTable and updates the values with the users new inputs.
+=======
+        /// 
+>>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEditBug_Click(object sender, EventArgs e)
         {
             if (checkInputs())
@@ -269,7 +327,16 @@ namespace BugTracker
                 cleartxtBoxes();
             }
         }
-
+        /// <summary>
+<<<<<<< HEAD
+        /// Creates the references for App Name and Comments for the CommentTable table.
+=======
+        /// 
+>>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="comment"></param>
+        /// <param name="commandString"></param>
         public void insertRecord(String app, String comment, String commandString)
         {
             try
@@ -288,19 +355,40 @@ namespace BugTracker
 
         }
 
-
+        /// <summary>
+<<<<<<< HEAD
+        /// Calls the selectBugView method to show the bug details of the chosen app.
+=======
+        /// 
+>>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnViewBug_Click(object sender, EventArgs e)
         {
             selectBugView();
         }
-
+        /// <summary>
+        /// Calls the simpleBugView method to show a simple list of bug details of the chosen app.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSimpleView_Click(object sender, EventArgs e)
         {
             simpleBugView();
         }
+<<<<<<< HEAD
+        /// <summary>
+        /// Inserts the App name and Comment into the CommentTable.
+=======
 
     
-
+        /// <summary>
+        /// 
+>>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCommentBug_Click(object sender, EventArgs e)
         {
             String commandStringArchive = "INSERT INTO CommentTable (App, Comment) VALUES ( @app, @comment)";
@@ -311,28 +399,68 @@ namespace BugTracker
 
 
         }
-
+        /// <summary>
+<<<<<<< HEAD
+        /// Opens up the help form.
+=======
+        /// 
+>>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var myForm = new frmHelp();
             myForm.Show();
         }
-
+        /// <summary>
+<<<<<<< HEAD
+        /// Closes the current form.
+=======
+        /// 
+>>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+<<<<<<< HEAD
+        /// Restores the current form to its normal size.
+=======
+        /// 
+>>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void restoreToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
         }
-
+        /// <summary>
+<<<<<<< HEAD
+        /// Minimizes the current form.
+=======
+        /// 
+>>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void minimizedToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
+        /// <summary>
+<<<<<<< HEAD
+        /// Maxinizes the size of the form.
+=======
+        /// 
+>>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void maximizedToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;

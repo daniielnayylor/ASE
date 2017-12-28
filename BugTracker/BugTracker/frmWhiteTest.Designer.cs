@@ -66,11 +66,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnEditBug = new System.Windows.Forms.Button();
             this.restoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.minimizedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maximizedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEditBug = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -485,9 +485,30 @@
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
+            // 
+            // restoreToolStripMenuItem
+            // 
+            this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
+            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
+            this.restoreToolStripMenuItem.Text = "Restore";
+            this.restoreToolStripMenuItem.Click += new System.EventHandler(this.restoreToolStripMenuItem_Click);
+            // 
+            // minimizedToolStripMenuItem
+            // 
+            this.minimizedToolStripMenuItem.Name = "minimizedToolStripMenuItem";
+            this.minimizedToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
+            this.minimizedToolStripMenuItem.Text = "Minimize";
+            this.minimizedToolStripMenuItem.Click += new System.EventHandler(this.minimizedToolStripMenuItem_Click);
+            // 
+            // maximizedToolStripMenuItem
+            // 
+            this.maximizedToolStripMenuItem.Name = "maximizedToolStripMenuItem";
+            this.maximizedToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
+            this.maximizedToolStripMenuItem.Text = "Maximize";
+            this.maximizedToolStripMenuItem.Click += new System.EventHandler(this.maximizedToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -508,27 +529,6 @@
             this.btnEditBug.Text = "Edit Bug";
             this.btnEditBug.UseVisualStyleBackColor = false;
             this.btnEditBug.Click += new System.EventHandler(this.btnEditBug_Click);
-            // 
-            // restoreToolStripMenuItem
-            // 
-            this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
-            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.restoreToolStripMenuItem.Text = "Restore";
-            this.restoreToolStripMenuItem.Click += new System.EventHandler(this.restoreToolStripMenuItem_Click);
-            // 
-            // minimizedToolStripMenuItem
-            // 
-            this.minimizedToolStripMenuItem.Name = "minimizedToolStripMenuItem";
-            this.minimizedToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.minimizedToolStripMenuItem.Text = "Minimize";
-            this.minimizedToolStripMenuItem.Click += new System.EventHandler(this.minimizedToolStripMenuItem_Click);
-            // 
-            // maximizedToolStripMenuItem
-            // 
-            this.maximizedToolStripMenuItem.Name = "maximizedToolStripMenuItem";
-            this.maximizedToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.maximizedToolStripMenuItem.Text = "Maximize";
-            this.maximizedToolStripMenuItem.Click += new System.EventHandler(this.maximizedToolStripMenuItem_Click);
             // 
             // frmWhiteTest
             // 
