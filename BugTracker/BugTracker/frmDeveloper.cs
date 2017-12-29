@@ -11,11 +11,7 @@ using System.Windows.Forms;
 namespace BugTracker
 {
     /// <summary>
-<<<<<<< HEAD
     /// Opens up a connection to the database and tables when the form is opened so the database can be read or written to.
-=======
-    /// 
->>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
     /// </summary>
     public partial class frmDeveloper : Form
     {
@@ -24,11 +20,8 @@ namespace BugTracker
         {
             openConnection();
             InitializeComponent();
-<<<<<<< HEAD
+            viewBugNames();
 
-=======
-           
->>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
         }
         /// <summary>
         /// Opens the connection to the database using the SQL Database connection string when the form is opened
@@ -65,7 +58,7 @@ namespace BugTracker
             mySqlConnection =
                  new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Source\Repos\ASE\BugTracker\BugTracker\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
 
-            String selcmd = "SELECT App, Error, Cause, BugType, ClassFileName, MethodName, CodeBlock, LineNumber FROM BugTable WHERE App = '" + txtBugList.Text + "'";
+            String selcmd = "SELECT App, Error, Cause, BugType, ClassFileName, MethodName, CodeBlock, LineNumber, Code FROM BugTable WHERE App = '" + txtBugList.Text + "'";
 
             SqlCommand mySqlCommand = new SqlCommand(selcmd, mySqlConnection);
 
@@ -90,6 +83,8 @@ namespace BugTracker
                     lbxBugList.Items.Add("Code Block: " + mySqlDataReader["CodeBlock"]);
                     lbxBugList.Items.Add("Line Number: " + mySqlDataReader["LineNumber"]);
                     lbxBugList.Items.Add("---------------------------------------------------");
+
+                    txtSourceCodeView.Text = mySqlDataReader["Code"].ToString();
 
 
 
@@ -183,6 +178,38 @@ namespace BugTracker
 
         }
 
+        public void viewBugNames()
+        {
+            mySqlConnection =
+                 new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Source\Repos\ASE\BugTracker\BugTracker\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
+
+            String selcmd = "SELECT App FROM BugTable ORDER BY App";
+
+            SqlCommand mySqlCommand = new SqlCommand(selcmd, mySqlConnection);
+
+            try
+            {
+                mySqlConnection.Open();
+
+                SqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
+
+                lbxBugView.Items.Clear();
+
+                while (mySqlDataReader.Read())
+                {
+                    lbxBugView.Items.Add("App Name: " + mySqlDataReader["App"]);
+                    lbxBugView.Items.Add("---------------------------------------------------");
+                }
+            }
+
+            catch (SqlException ex)
+            {
+
+                // MessageBox.Show(bugID + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
 
         /// <summary>
         /// Opens the help form from the help menu item
@@ -195,11 +222,7 @@ namespace BugTracker
             myForm.Show();
         }
         /// <summary>
-<<<<<<< HEAD
         /// Closes the current form
-=======
-        /// Closes the 
->>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -337,6 +360,18 @@ namespace BugTracker
             simpleBugList();
             commentBugList();
 
+        }
+        /// <summary>
+        /// Updates the source code within the table
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void fixCode_Click(object sender, EventArgs e)
+        {
+            String commandString = "UPDATE BugTable SET Code = '" + txtSourceCodeView.Text + "' WHERE App = '" + txtBugList.Text + "'"; 
+            SqlCommand cmdfixCode = new SqlCommand(commandString, mySqlConnection);
+            cmdfixCode.ExecuteNonQuery();
+            MessageBox.Show("Code Fixed!");
         }
     }
 }

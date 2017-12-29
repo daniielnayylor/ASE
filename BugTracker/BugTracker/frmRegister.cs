@@ -11,12 +11,9 @@ using System.Windows.Forms;
 
 namespace BugTracker
 {
-<<<<<<< HEAD
     /// <summary>
     /// Opens up a connection to the database and tables when the form is opened so the database can be read or written to.
     /// </summary>
-=======
->>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
     public partial class frmRegister : Form
     {
         SqlConnection mySqlConnection;
@@ -25,12 +22,9 @@ namespace BugTracker
             openConnection();
             InitializeComponent();
         }
-<<<<<<< HEAD
         /// <summary>
         /// Opens the connection to the database using the SQL Database connection string when the form is opened.
         /// </summary>
-=======
->>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
         public void openConnection()
         {
             mySqlConnection =
@@ -54,16 +48,12 @@ namespace BugTracker
                 // MessageBox.Show(bugID + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-<<<<<<< HEAD
         /// <summary>
         /// Creates the references for Username and Password for the LogInTable table.
         /// </summary>
         /// <param name="username"></param>
         /// <param name="password"></param>
         /// <param name="commandString"></param>
-=======
-
->>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
         public void registerAccount(String username, String password, String commandString)
         {
             try
@@ -80,15 +70,11 @@ namespace BugTracker
                 MessageBox.Show(username + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-<<<<<<< HEAD
         /// <summary>
         /// Inserts the values of Username and Password into the LogInTable table.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-=======
-
->>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrWhiteSpace(txtUsername.Text) || string.IsNullOrWhiteSpace(txtPassword.Text) || string.IsNullOrEmpty(txtPassword.Text))

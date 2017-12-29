@@ -12,11 +12,7 @@ using System.Windows.Forms;
 namespace BugTracker
 {
     /// <summary>
-<<<<<<< HEAD
     /// Opens up a connection to the database and tables when the form is opened so the database can be read or written to.
-=======
-    /// 
->>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
     /// </summary>
     public partial class frmLogin : Form
     {
@@ -27,11 +23,7 @@ namespace BugTracker
             InitializeComponent();
         }
         /// <summary>
-<<<<<<< HEAD
         /// Opens the connection to the database using the SQL Database connection string when the form is opened.
-=======
-        /// 
->>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
         /// </summary>
         public void openConnection()
         {
@@ -57,11 +49,7 @@ namespace BugTracker
             }
         }
         /// <summary>
-<<<<<<< HEAD
         /// Selects the values from the LogInTable and compares the results against what the user has written in the username and password text boxes to make sure the credentials match with the database.
-=======
-        /// 
->>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -69,13 +57,7 @@ namespace BugTracker
         {
             try
             {
-<<<<<<< HEAD
                 SqlCommand cmd = new SqlCommand(@"SELECT Count(*) FROM LogInTable WHERE Username=@uname and Password=@pass", mySqlConnection);
-=======
-                SqlCommand cmd = new SqlCommand(@"SELECT Count(*) FROM LogInTable 
-                                        WHERE Username=@uname and 
-                                        Password=@pass", mySqlConnection);
->>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
                 cmd.Parameters.AddWithValue("@uname", txtUsername.Text);
                 cmd.Parameters.AddWithValue("@pass", txtPassword.Text);
                 int result = (int)cmd.ExecuteScalar();
@@ -87,12 +69,7 @@ namespace BugTracker
                     this.Close();
                 }
                 else
-<<<<<<< HEAD
                 MessageBox.Show("Incorrect login");                
-=======
-                    MessageBox.Show("Incorrect login");
-                
->>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
             }
             catch (Exception ex)
             {
@@ -100,11 +77,7 @@ namespace BugTracker
             }
         }
         /// <summary>
-<<<<<<< HEAD
         /// Opens up the register from.
-=======
-        /// 
->>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

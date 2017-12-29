@@ -13,22 +13,14 @@ namespace BugTracker
     public partial class frmHomePage : Form
     {
     /// <summary>
-<<<<<<< HEAD
     /// Creates the design for the form.
-=======
-    /// 
->>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
     /// </summary>
         public frmHomePage()
         {
             InitializeComponent();
         }
         /// <summary>
-<<<<<<< HEAD
         /// Opens the help form.
-=======
-        /// 
->>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -38,11 +30,7 @@ namespace BugTracker
             myForm.Show();
         }
         /// <summary>
-<<<<<<< HEAD
         /// Closes the current form.
-=======
-        /// 
->>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -51,11 +39,7 @@ namespace BugTracker
             this.Close();
         }
         /// <summary>
-<<<<<<< HEAD
         /// Opens the white box testers form.
-=======
-        /// 
->>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -65,11 +49,7 @@ namespace BugTracker
             myForm.Show();
         }
         /// <summary>
-<<<<<<< HEAD
         /// Opens the black box testers form.
-=======
-        /// 
->>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -79,11 +59,7 @@ namespace BugTracker
             myForm.Show();
         }
         /// <summary>
-<<<<<<< HEAD
         /// Opens the developers form.
-=======
-        /// 
->>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -102,11 +78,7 @@ namespace BugTracker
             this.WindowState = FormWindowState.Minimized;
         }
         /// <summary>
-<<<<<<< HEAD
         /// Restores the form to its normal size.
-=======
-        /// 
->>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -116,11 +88,7 @@ namespace BugTracker
 
         }
         /// <summary>
-<<<<<<< HEAD
         /// Maximizes the form size.
-=======
-        /// 
->>>>>>> 0bcdb75... Added a log in system with a new table for developers where they can create an account and log back in. This is so testers don't access developer options like comment and archive.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

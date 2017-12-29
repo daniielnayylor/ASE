@@ -37,6 +37,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.minimizedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.maximizedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCommentBug = new System.Windows.Forms.Button();
@@ -60,9 +63,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.restoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.minimizedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.maximizedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtSourceCodeView = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbxBugView = new System.Windows.Forms.ListBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.fixCode = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +76,7 @@
             this.txtcommentarchive.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txtcommentarchive.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtcommentarchive.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtcommentarchive.Location = new System.Drawing.Point(605, 607);
+            this.txtcommentarchive.Location = new System.Drawing.Point(1171, 607);
             this.txtcommentarchive.Multiline = true;
             this.txtcommentarchive.Name = "txtcommentarchive";
             this.txtcommentarchive.Size = new System.Drawing.Size(262, 258);
@@ -81,7 +86,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label16.Location = new System.Drawing.Point(336, 573);
+            this.label16.Location = new System.Drawing.Point(952, 573);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(86, 19);
             this.label16.TabIndex = 37;
@@ -91,7 +96,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(673, 466);
+            this.label15.Location = new System.Drawing.Point(1239, 466);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(116, 26);
             this.label15.TabIndex = 38;
@@ -102,7 +107,7 @@
             this.txtArchive.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txtArchive.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtArchive.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtArchive.Location = new System.Drawing.Point(604, 524);
+            this.txtArchive.Location = new System.Drawing.Point(1170, 524);
             this.txtArchive.Multiline = true;
             this.txtArchive.Name = "txtArchive";
             this.txtArchive.Size = new System.Drawing.Size(263, 46);
@@ -112,7 +117,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(336, 494);
+            this.label9.Location = new System.Drawing.Point(952, 494);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(84, 19);
             this.label9.TabIndex = 36;
@@ -123,9 +128,9 @@
             this.btnRemove.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemove.Font = new System.Drawing.Font("Calibri", 12F);
-            this.btnRemove.Location = new System.Drawing.Point(678, 871);
+            this.btnRemove.Location = new System.Drawing.Point(1171, 871);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(104, 30);
+            this.btnRemove.Size = new System.Drawing.Size(262, 30);
             this.btnRemove.TabIndex = 35;
             this.btnRemove.Text = "Remove Bug";
             this.btnRemove.UseVisualStyleBackColor = false;
@@ -135,7 +140,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(251, 38);
+            this.label8.Location = new System.Drawing.Point(624, 27);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(248, 29);
             this.label8.TabIndex = 39;
@@ -151,7 +156,7 @@
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1044, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(1455, 27);
             this.menuStrip1.TabIndex = 46;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -166,10 +171,31 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 23);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // restoreToolStripMenuItem
+            // 
+            this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
+            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
+            this.restoreToolStripMenuItem.Text = "Restore";
+            this.restoreToolStripMenuItem.Click += new System.EventHandler(this.restoreToolStripMenuItem_Click_1);
+            // 
+            // minimizedToolStripMenuItem
+            // 
+            this.minimizedToolStripMenuItem.Name = "minimizedToolStripMenuItem";
+            this.minimizedToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
+            this.minimizedToolStripMenuItem.Text = "Minimize";
+            this.minimizedToolStripMenuItem.Click += new System.EventHandler(this.minimizedToolStripMenuItem_Click);
+            // 
+            // maximizedToolStripMenuItem
+            // 
+            this.maximizedToolStripMenuItem.Name = "maximizedToolStripMenuItem";
+            this.maximizedToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
+            this.maximizedToolStripMenuItem.Text = "Maximize";
+            this.maximizedToolStripMenuItem.Click += new System.EventHandler(this.maximizedToolStripMenuItem_Click);
+            // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -185,9 +211,9 @@
             this.btnCommentBug.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnCommentBug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCommentBug.Font = new System.Drawing.Font("Calibri", 12F);
-            this.btnCommentBug.Location = new System.Drawing.Point(331, 871);
+            this.btnCommentBug.Location = new System.Drawing.Point(878, 871);
             this.btnCommentBug.Name = "btnCommentBug";
-            this.btnCommentBug.Size = new System.Drawing.Size(130, 30);
+            this.btnCommentBug.Size = new System.Drawing.Size(263, 30);
             this.btnCommentBug.TabIndex = 52;
             this.btnCommentBug.Text = "Comment Bug";
             this.btnCommentBug.UseVisualStyleBackColor = false;
@@ -197,7 +223,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label19.Location = new System.Drawing.Point(694, 573);
+            this.label19.Location = new System.Drawing.Point(1260, 573);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(86, 19);
             this.label19.TabIndex = 51;
@@ -208,7 +234,7 @@
             this.txtcommentappname.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txtcommentappname.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtcommentappname.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtcommentappname.Location = new System.Drawing.Point(262, 524);
+            this.txtcommentappname.Location = new System.Drawing.Point(878, 524);
             this.txtcommentappname.Multiline = true;
             this.txtcommentappname.Name = "txtcommentappname";
             this.txtcommentappname.Size = new System.Drawing.Size(262, 46);
@@ -218,7 +244,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label18.Location = new System.Drawing.Point(694, 494);
+            this.label18.Location = new System.Drawing.Point(1260, 494);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(84, 19);
             this.label18.TabIndex = 50;
@@ -229,7 +255,7 @@
             this.txtcommentbug.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txtcommentbug.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtcommentbug.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtcommentbug.Location = new System.Drawing.Point(262, 607);
+            this.txtcommentbug.Location = new System.Drawing.Point(878, 607);
             this.txtcommentbug.Multiline = true;
             this.txtcommentbug.Name = "txtcommentbug";
             this.txtcommentbug.Size = new System.Drawing.Size(262, 258);
@@ -239,7 +265,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(314, 466);
+            this.label17.Location = new System.Drawing.Point(930, 466);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(135, 26);
             this.label17.TabIndex = 47;
@@ -253,9 +279,9 @@
             this.lbxBugList.FormattingEnabled = true;
             this.lbxBugList.HorizontalScrollbar = true;
             this.lbxBugList.ItemHeight = 19;
-            this.lbxBugList.Location = new System.Drawing.Point(78, 135);
+            this.lbxBugList.Location = new System.Drawing.Point(306, 197);
             this.lbxBugList.Name = "lbxBugList";
-            this.lbxBugList.Size = new System.Drawing.Size(262, 247);
+            this.lbxBugList.Size = new System.Drawing.Size(262, 703);
             this.lbxBugList.TabIndex = 53;
             // 
             // lbxCommentList
@@ -266,7 +292,7 @@
             this.lbxCommentList.FormattingEnabled = true;
             this.lbxCommentList.HorizontalScrollbar = true;
             this.lbxCommentList.ItemHeight = 19;
-            this.lbxCommentList.Location = new System.Drawing.Point(396, 135);
+            this.lbxCommentList.Location = new System.Drawing.Point(878, 135);
             this.lbxCommentList.Name = "lbxCommentList";
             this.lbxCommentList.Size = new System.Drawing.Size(262, 247);
             this.lbxCommentList.TabIndex = 54;
@@ -279,7 +305,7 @@
             this.lbxArchiveList.FormattingEnabled = true;
             this.lbxArchiveList.HorizontalScrollbar = true;
             this.lbxArchiveList.ItemHeight = 19;
-            this.lbxArchiveList.Location = new System.Drawing.Point(708, 135);
+            this.lbxArchiveList.Location = new System.Drawing.Point(1170, 135);
             this.lbxArchiveList.Name = "lbxArchiveList";
             this.lbxArchiveList.Size = new System.Drawing.Size(262, 247);
             this.lbxArchiveList.TabIndex = 55;
@@ -289,9 +315,9 @@
             this.btnBugList.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnBugList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBugList.Font = new System.Drawing.Font("Calibri", 12F);
-            this.btnBugList.Location = new System.Drawing.Point(165, 422);
+            this.btnBugList.Location = new System.Drawing.Point(306, 161);
             this.btnBugList.Name = "btnBugList";
-            this.btnBugList.Size = new System.Drawing.Size(104, 30);
+            this.btnBugList.Size = new System.Drawing.Size(262, 30);
             this.btnBugList.TabIndex = 57;
             this.btnBugList.Text = "View Bug";
             this.btnBugList.UseVisualStyleBackColor = false;
@@ -302,7 +328,7 @@
             this.txtBugList.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txtBugList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBugList.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtBugList.Location = new System.Drawing.Point(165, 389);
+            this.txtBugList.Location = new System.Drawing.Point(392, 135);
             this.txtBugList.Name = "txtBugList";
             this.txtBugList.Size = new System.Drawing.Size(176, 20);
             this.txtBugList.TabIndex = 56;
@@ -311,7 +337,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label13.Location = new System.Drawing.Point(75, 388);
+            this.label13.Location = new System.Drawing.Point(302, 134);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(84, 19);
             this.label13.TabIndex = 58;
@@ -322,7 +348,7 @@
             this.btnArchiveList.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnArchiveList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnArchiveList.Font = new System.Drawing.Font("Calibri", 12F);
-            this.btnArchiveList.Location = new System.Drawing.Point(795, 421);
+            this.btnArchiveList.Location = new System.Drawing.Point(1257, 421);
             this.btnArchiveList.Name = "btnArchiveList";
             this.btnArchiveList.Size = new System.Drawing.Size(104, 30);
             this.btnArchiveList.TabIndex = 60;
@@ -335,7 +361,7 @@
             this.txtArchiveList.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txtArchiveList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtArchiveList.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtArchiveList.Location = new System.Drawing.Point(795, 388);
+            this.txtArchiveList.Location = new System.Drawing.Point(1257, 388);
             this.txtArchiveList.Name = "txtArchiveList";
             this.txtArchiveList.Size = new System.Drawing.Size(176, 20);
             this.txtArchiveList.TabIndex = 59;
@@ -344,7 +370,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label1.Location = new System.Drawing.Point(705, 387);
+            this.label1.Location = new System.Drawing.Point(1167, 387);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 19);
             this.label1.TabIndex = 61;
@@ -355,7 +381,7 @@
             this.btnCommentList.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnCommentList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCommentList.Font = new System.Drawing.Font("Calibri", 12F);
-            this.btnCommentList.Location = new System.Drawing.Point(483, 422);
+            this.btnCommentList.Location = new System.Drawing.Point(965, 422);
             this.btnCommentList.Name = "btnCommentList";
             this.btnCommentList.Size = new System.Drawing.Size(104, 30);
             this.btnCommentList.TabIndex = 63;
@@ -368,7 +394,7 @@
             this.txtCommentList.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txtCommentList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCommentList.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtCommentList.Location = new System.Drawing.Point(483, 389);
+            this.txtCommentList.Location = new System.Drawing.Point(965, 389);
             this.txtCommentList.Name = "txtCommentList";
             this.txtCommentList.Size = new System.Drawing.Size(176, 20);
             this.txtCommentList.TabIndex = 62;
@@ -377,7 +403,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label2.Location = new System.Drawing.Point(393, 390);
+            this.label2.Location = new System.Drawing.Point(874, 389);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 19);
             this.label2.TabIndex = 64;
@@ -387,7 +413,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(772, 88);
+            this.label3.Location = new System.Drawing.Point(1234, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 26);
             this.label3.TabIndex = 65;
@@ -397,7 +423,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(456, 88);
+            this.label4.Location = new System.Drawing.Point(938, 88);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(131, 26);
             this.label4.TabIndex = 66;
@@ -407,39 +433,80 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(160, 88);
+            this.label5.Location = new System.Drawing.Point(382, 88);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 26);
+            this.label5.Size = new System.Drawing.Size(94, 26);
             this.label5.TabIndex = 67;
-            this.label5.Text = "Bug List";
+            this.label5.Text = "Bug View";
             // 
-            // restoreToolStripMenuItem
+            // txtSourceCodeView
             // 
-            this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
-            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.restoreToolStripMenuItem.Text = "Restore";
-            this.restoreToolStripMenuItem.Click += new System.EventHandler(this.restoreToolStripMenuItem_Click_1);
+            this.txtSourceCodeView.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtSourceCodeView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSourceCodeView.Font = new System.Drawing.Font("Calibri", 12F);
+            this.txtSourceCodeView.Location = new System.Drawing.Point(589, 134);
+            this.txtSourceCodeView.Multiline = true;
+            this.txtSourceCodeView.Name = "txtSourceCodeView";
+            this.txtSourceCodeView.Size = new System.Drawing.Size(262, 731);
+            this.txtSourceCodeView.TabIndex = 68;
             // 
-            // minimizedToolStripMenuItem
+            // label6
             // 
-            this.minimizedToolStripMenuItem.Name = "minimizedToolStripMenuItem";
-            this.minimizedToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.minimizedToolStripMenuItem.Text = "Minimize";
-            this.minimizedToolStripMenuItem.Click += new System.EventHandler(this.minimizedToolStripMenuItem_Click);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(624, 88);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(169, 26);
+            this.label6.TabIndex = 69;
+            this.label6.Text = "View Source Code";
             // 
-            // maximizedToolStripMenuItem
+            // lbxBugView
             // 
-            this.maximizedToolStripMenuItem.Name = "maximizedToolStripMenuItem";
-            this.maximizedToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.maximizedToolStripMenuItem.Text = "Maximize";
-            this.maximizedToolStripMenuItem.Click += new System.EventHandler(this.maximizedToolStripMenuItem_Click);
+            this.lbxBugView.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.lbxBugView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbxBugView.Font = new System.Drawing.Font("Calibri", 12F);
+            this.lbxBugView.FormattingEnabled = true;
+            this.lbxBugView.HorizontalScrollbar = true;
+            this.lbxBugView.ItemHeight = 19;
+            this.lbxBugView.Location = new System.Drawing.Point(22, 134);
+            this.lbxBugView.Name = "lbxBugView";
+            this.lbxBugView.Size = new System.Drawing.Size(262, 760);
+            this.lbxBugView.TabIndex = 70;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(102, 88);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 26);
+            this.label7.TabIndex = 71;
+            this.label7.Text = "Bug List";
+            // 
+            // fixCode
+            // 
+            this.fixCode.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.fixCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fixCode.Font = new System.Drawing.Font("Calibri", 12F);
+            this.fixCode.Location = new System.Drawing.Point(589, 871);
+            this.fixCode.Name = "fixCode";
+            this.fixCode.Size = new System.Drawing.Size(262, 30);
+            this.fixCode.TabIndex = 72;
+            this.fixCode.Text = "Fix Code";
+            this.fixCode.UseVisualStyleBackColor = false;
+            this.fixCode.Click += new System.EventHandler(this.fixCode_Click);
             // 
             // frmDeveloper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1044, 909);
+            this.ClientSize = new System.Drawing.Size(1455, 909);
+            this.Controls.Add(this.fixCode);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lbxBugView);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtSourceCodeView);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -515,5 +582,10 @@
         private System.Windows.Forms.ToolStripMenuItem restoreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem minimizedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem maximizedToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtSourceCodeView;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ListBox lbxBugView;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button fixCode;
     }
 }
