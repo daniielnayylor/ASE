@@ -1,0 +1,15 @@
+F:\Source\Repos\ASE\BugTracker\BugTracker\bin\Debug\BugTracker.exe.config
+F:\Source\Repos\ASE\BugTracker\BugTracker\bin\Debug\BugTracker.exe
+F:\Source\Repos\ASE\BugTracker\BugTracker\bin\Debug\BugTracker.pdb
+F:\Source\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.csprojResolveAssemblyReference.cache
+F:\Source\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.Properties.Resources.resources
+F:\Source\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.csproj.GenerateResource.Cache
+F:\Source\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.exe
+F:\Source\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.pdb
+F:\Source\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmDeveloper.resources
+F:\Source\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmWhiteTest.resources
+F:\Source\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmBlackTester.resources
+F:\Source\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmHelp.resources
+F:\Source\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmHomePage.resources
+F:\Source\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmLogin.resources
+F:\Source\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmRegister.resources
