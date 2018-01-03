@@ -149,7 +149,7 @@ namespace BugTracker
             mySqlConnection =
                  new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Source\Repos\ASE\BugTracker\BugTracker\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
 
-            String selcmd = "SELECT App, Comment FROM CommentTable WHERE App = '" + txtCommentList.Text + "'";
+            String selcmd = "SELECT App, Comment, Name, Date FROM CommentTable WHERE App = '" + txtCommentList.Text + "'";
 
             SqlCommand mySqlCommand = new SqlCommand(selcmd, mySqlConnection);
 
@@ -166,6 +166,8 @@ namespace BugTracker
                     lbxCommentList.Items.Add("App Name: " + mySqlDataReader["App"]);
                     lbxCommentList.Items.Add("Archived Comment: ");
                     lbxCommentList.Items.Add(mySqlDataReader["Comment"]);
+                    lbxCommentList.Items.Add("Name: " + mySqlDataReader["Name"]);
+                    lbxCommentList.Items.Add("Date: " + mySqlDataReader["Date"]);
                     lbxCommentList.Items.Add("---------------------------------------------------");
                 }
             }
@@ -359,6 +361,7 @@ namespace BugTracker
             archvieBugList();
             simpleBugList();
             commentBugList();
+            viewBugNames();
 
         }
         /// <summary>
@@ -373,5 +376,6 @@ namespace BugTracker
             cmdfixCode.ExecuteNonQuery();
             MessageBox.Show("Code Fixed!");
         }
+
     }
 }

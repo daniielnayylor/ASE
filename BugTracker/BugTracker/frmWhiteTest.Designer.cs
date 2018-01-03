@@ -473,6 +473,7 @@
             this.txtSourceCodeView.Location = new System.Drawing.Point(1008, 550);
             this.txtSourceCodeView.Multiline = true;
             this.txtSourceCodeView.Name = "txtSourceCodeView";
+            this.txtSourceCodeView.ReadOnly = true;
             this.txtSourceCodeView.Size = new System.Drawing.Size(262, 324);
             this.txtSourceCodeView.TabIndex = 48;
             // 
@@ -536,9 +537,9 @@
             this.label15.Font = new System.Drawing.Font("Calibri", 12F);
             this.label15.Location = new System.Drawing.Point(12, 613);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(111, 19);
+            this.label15.Size = new System.Drawing.Size(97, 38);
             this.label15.TabIndex = 51;
-            this.label15.Text = "Source Control: ";
+            this.label15.Text = "Source Code: \r\n\r\n";
             // 
             // frmWhiteTest
             // 

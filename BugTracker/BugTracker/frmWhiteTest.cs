@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ColorCode;
 
 namespace BugTracker
 {
@@ -169,12 +171,7 @@ namespace BugTracker
                 while (mySqlDataReader.Read())
                 {
 
-                    //lbxBugView.Items.Add("ID: " + mySqlDataReader["BugId"] + " Bug Type: " +
-                    //       mySqlDataReader["BugType"] + " Class File Name: " + mySqlDataReader["ClassFileName"]
-                    //       + " Method Name: " + mySqlDataReader["MethodName"] + " Code Block: " + mySqlDataReader["CodeBlock"]
-                    //       + " Line Number: " + mySqlDataReader["LineNumber"]);
-
-                    //lbxSimpleView.Items.Add("ID: " + mySqlDataReader["BugId"]);
+                   
                     lbxSimpleView.Items.Add("App Name: " + mySqlDataReader["App"]);
                     lbxSimpleView.Items.Add("Error: " + mySqlDataReader["Error"]);
                     lbxSimpleView.Items.Add("Cause: " + mySqlDataReader["Cause"]);
@@ -269,8 +266,9 @@ namespace BugTracker
                     insertRecord(txtAppName.Text, txtbugType.Text, txtcfName.Text, txtmthdName.Text, txtcbName.Text, txtlineNumb.Text, txtSourceCode.Text, commandString);
                     populateListBox();  
                     simpleBugList();
+                    ColourizeCode();
                     cleartxtBoxes();
-                    MessageBox.Show("Bug Successfully Reported");
+                MessageBox.Show("Bug Successfully Reported");
                 }
         }
         /// <summary>
@@ -285,7 +283,7 @@ namespace BugTracker
 
                 String commandString = "UPDATE BugTable SET BugType = '" + txtbugType.Text + "', ClassFileName = '"
                 + txtcfName.Text + "', MethodName = '" + txtmthdName.Text + "', CodeBlock = '" + txtcbName.Text +
-                "', LineNumber = '" + txtlineNumb.Text + "' WHERE App = '" + txtAppName.Text + "'";
+                "', LineNumber = '" + txtlineNumb.Text + "', Code = '" + txtSourceCode.Text + "' WHERE App = '" + txtAppName.Text + "'";
                 SqlCommand cmdEditTable = new SqlCommand(commandString, mySqlConnection);
                 cmdEditTable.ExecuteNonQuery();
 
@@ -293,6 +291,22 @@ namespace BugTracker
                 cleartxtBoxes();
             }
         }
+
+        /// <summary>
+        /// Colour codes the source code and outputs to a html file.
+        /// </summary>
+        public void ColourizeCode()
+        {
+            
+            string colourizedSourceCode = new CodeColorizer().Colorize(txtSourceCode.Text, Languages.CSharp);
+            txtSourceCode.Text = colourizedSourceCode;
+
+            string html = ("<!doctype html><head><meta charset=\"utf-8\" <title> Code Snippet </title> </head> <body>" + colourizedSourceCode + "</body></html>");
+            System.IO.File.WriteAllText(@"F:\Source\Repos\ASE\BugTracker\BugTracker\Code.html", html);
+        }
+
+
+
         /// <summary>
         /// Creates the references for App Name and Comments for the CommentTable table.
         /// </summary>

@@ -68,6 +68,14 @@
             this.lbxBugView = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
             this.fixCode = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtUsernameComment = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtCommentDate = new System.Windows.Forms.TextBox();
+            this.txtDateArchive = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtUserNameArchive = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,17 +84,17 @@
             this.txtcommentarchive.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txtcommentarchive.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtcommentarchive.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtcommentarchive.Location = new System.Drawing.Point(1171, 607);
+            this.txtcommentarchive.Location = new System.Drawing.Point(1171, 623);
             this.txtcommentarchive.Multiline = true;
             this.txtcommentarchive.Name = "txtcommentarchive";
-            this.txtcommentarchive.Size = new System.Drawing.Size(262, 258);
+            this.txtcommentarchive.Size = new System.Drawing.Size(262, 242);
             this.txtcommentarchive.TabIndex = 34;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label16.Location = new System.Drawing.Point(952, 573);
+            this.label16.Location = new System.Drawing.Point(952, 601);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(86, 19);
             this.label16.TabIndex = 37;
@@ -107,17 +115,17 @@
             this.txtArchive.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txtArchive.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtArchive.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtArchive.Location = new System.Drawing.Point(1170, 524);
+            this.txtArchive.Location = new System.Drawing.Point(956, 496);
             this.txtArchive.Multiline = true;
             this.txtArchive.Name = "txtArchive";
-            this.txtArchive.Size = new System.Drawing.Size(263, 46);
+            this.txtArchive.Size = new System.Drawing.Size(184, 27);
             this.txtArchive.TabIndex = 33;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(952, 494);
+            this.label9.Location = new System.Drawing.Point(865, 504);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(84, 19);
             this.label9.TabIndex = 36;
@@ -223,7 +231,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label19.Location = new System.Drawing.Point(1260, 573);
+            this.label19.Location = new System.Drawing.Point(1260, 601);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(86, 19);
             this.label19.TabIndex = 51;
@@ -234,17 +242,17 @@
             this.txtcommentappname.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txtcommentappname.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtcommentappname.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtcommentappname.Location = new System.Drawing.Point(878, 524);
+            this.txtcommentappname.Location = new System.Drawing.Point(1248, 496);
             this.txtcommentappname.Multiline = true;
             this.txtcommentappname.Name = "txtcommentappname";
-            this.txtcommentappname.Size = new System.Drawing.Size(262, 46);
+            this.txtcommentappname.Size = new System.Drawing.Size(185, 27);
             this.txtcommentappname.TabIndex = 49;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label18.Location = new System.Drawing.Point(1260, 494);
+            this.label18.Location = new System.Drawing.Point(1158, 504);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(84, 19);
             this.label18.TabIndex = 50;
@@ -255,10 +263,10 @@
             this.txtcommentbug.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txtcommentbug.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtcommentbug.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtcommentbug.Location = new System.Drawing.Point(878, 607);
+            this.txtcommentbug.Location = new System.Drawing.Point(878, 623);
             this.txtcommentbug.Multiline = true;
             this.txtcommentbug.Name = "txtcommentbug";
-            this.txtcommentbug.Size = new System.Drawing.Size(262, 258);
+            this.txtcommentbug.Size = new System.Drawing.Size(262, 242);
             this.txtcommentbug.TabIndex = 48;
             // 
             // label17
@@ -444,10 +452,10 @@
             this.txtSourceCodeView.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txtSourceCodeView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSourceCodeView.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtSourceCodeView.Location = new System.Drawing.Point(589, 134);
+            this.txtSourceCodeView.Location = new System.Drawing.Point(589, 161);
             this.txtSourceCodeView.Multiline = true;
             this.txtSourceCodeView.Name = "txtSourceCodeView";
-            this.txtSourceCodeView.Size = new System.Drawing.Size(262, 731);
+            this.txtSourceCodeView.Size = new System.Drawing.Size(262, 704);
             this.txtSourceCodeView.TabIndex = 68;
             // 
             // label6
@@ -496,12 +504,104 @@
             this.fixCode.UseVisualStyleBackColor = false;
             this.fixCode.Click += new System.EventHandler(this.fixCode_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Calibri", 12F);
+            this.label10.Location = new System.Drawing.Point(865, 537);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(85, 19);
+            this.label10.TabIndex = 73;
+            this.label10.Text = "User Name:";
+            // 
+            // txtUsernameComment
+            // 
+            this.txtUsernameComment.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtUsernameComment.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsernameComment.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsernameComment.Location = new System.Drawing.Point(956, 529);
+            this.txtUsernameComment.Multiline = true;
+            this.txtUsernameComment.Name = "txtUsernameComment";
+            this.txtUsernameComment.Size = new System.Drawing.Size(184, 27);
+            this.txtUsernameComment.TabIndex = 74;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Calibri", 12F);
+            this.label11.Location = new System.Drawing.Point(865, 571);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(44, 19);
+            this.label11.TabIndex = 75;
+            this.label11.Text = "Date:";
+            // 
+            // txtCommentDate
+            // 
+            this.txtCommentDate.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtCommentDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCommentDate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCommentDate.Location = new System.Drawing.Point(956, 563);
+            this.txtCommentDate.Multiline = true;
+            this.txtCommentDate.Name = "txtCommentDate";
+            this.txtCommentDate.Size = new System.Drawing.Size(184, 27);
+            this.txtCommentDate.TabIndex = 76;
+            // 
+            // txtDateArchive
+            // 
+            this.txtDateArchive.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtDateArchive.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDateArchive.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDateArchive.Location = new System.Drawing.Point(1249, 563);
+            this.txtDateArchive.Multiline = true;
+            this.txtDateArchive.Name = "txtDateArchive";
+            this.txtDateArchive.Size = new System.Drawing.Size(184, 27);
+            this.txtDateArchive.TabIndex = 80;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Calibri", 12F);
+            this.label12.Location = new System.Drawing.Point(1158, 571);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(44, 19);
+            this.label12.TabIndex = 79;
+            this.label12.Text = "Date:";
+            // 
+            // txtUserNameArchive
+            // 
+            this.txtUserNameArchive.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtUserNameArchive.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUserNameArchive.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserNameArchive.Location = new System.Drawing.Point(1249, 529);
+            this.txtUserNameArchive.Multiline = true;
+            this.txtUserNameArchive.Name = "txtUserNameArchive";
+            this.txtUserNameArchive.Size = new System.Drawing.Size(184, 27);
+            this.txtUserNameArchive.TabIndex = 78;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Calibri", 12F);
+            this.label14.Location = new System.Drawing.Point(1158, 537);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(85, 19);
+            this.label14.TabIndex = 77;
+            this.label14.Text = "User Name:";
+            // 
             // frmDeveloper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1455, 909);
+            this.Controls.Add(this.txtDateArchive);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.txtUserNameArchive);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.txtCommentDate);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtUsernameComment);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.fixCode);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lbxBugView);
@@ -587,5 +687,13 @@
         private System.Windows.Forms.ListBox lbxBugView;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button fixCode;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtUsernameComment;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtCommentDate;
+        private System.Windows.Forms.TextBox txtDateArchive;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtUserNameArchive;
+        private System.Windows.Forms.Label label14;
     }
 }
