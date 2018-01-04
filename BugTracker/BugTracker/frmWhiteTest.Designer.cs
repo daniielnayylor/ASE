@@ -409,10 +409,10 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.closeToolStripMenuItem,
             this.restoreToolStripMenuItem,
             this.minimizedToolStripMenuItem,
-            this.maximizedToolStripMenuItem});
+            this.maximizedToolStripMenuItem,
+            this.closeToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 23);
             this.fileToolStripMenuItem.Text = "File";
@@ -420,28 +420,28 @@
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // restoreToolStripMenuItem
             // 
             this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
-            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
+            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.restoreToolStripMenuItem.Text = "Restore";
             this.restoreToolStripMenuItem.Click += new System.EventHandler(this.restoreToolStripMenuItem_Click);
             // 
             // minimizedToolStripMenuItem
             // 
             this.minimizedToolStripMenuItem.Name = "minimizedToolStripMenuItem";
-            this.minimizedToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
+            this.minimizedToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.minimizedToolStripMenuItem.Text = "Minimize";
             this.minimizedToolStripMenuItem.Click += new System.EventHandler(this.minimizedToolStripMenuItem_Click);
             // 
             // maximizedToolStripMenuItem
             // 
             this.maximizedToolStripMenuItem.Name = "maximizedToolStripMenuItem";
-            this.maximizedToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
+            this.maximizedToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.maximizedToolStripMenuItem.Text = "Maximize";
             this.maximizedToolStripMenuItem.Click += new System.EventHandler(this.maximizedToolStripMenuItem_Click);
             // 

@@ -266,7 +266,7 @@ namespace BugTracker
                     insertRecord(txtAppName.Text, txtbugType.Text, txtcfName.Text, txtmthdName.Text, txtcbName.Text, txtlineNumb.Text, txtSourceCode.Text, commandString);
                     populateListBox();  
                     simpleBugList();
-                    ColourizeCode();
+                    //ColourizeCode();
                     cleartxtBoxes();
                 MessageBox.Show("Bug Successfully Reported");
                 }
@@ -292,22 +292,7 @@ namespace BugTracker
             }
         }
 
-        /// <summary>
-        /// Colour codes the source code and outputs to a html file.
-        /// </summary>
-        public void ColourizeCode()
-        {
-            
-            string colourizedSourceCode = new CodeColorizer().Colorize(txtSourceCode.Text, Languages.CSharp);
-            txtSourceCode.Text = colourizedSourceCode;
-
-            string html = ("<!doctype html><head><meta charset=\"utf-8\" <title> Code Snippet </title> </head> <body>" + colourizedSourceCode + "</body></html>");
-            System.IO.File.WriteAllText(@"F:\Source\Repos\ASE\BugTracker\BugTracker\Code.html", html);
-        }
-
-
-
-        /// <summary>
+                /// <summary>
         /// Creates the references for App Name and Comments for the CommentTable table.
         /// </summary>
         /// <param name="app"></param>

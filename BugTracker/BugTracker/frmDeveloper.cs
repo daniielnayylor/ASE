@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ColorCode;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,7 +32,7 @@ namespace BugTracker
             mySqlConnection =
                  new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Source\Repos\ASE\BugTracker\BugTracker\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
 
-            String selcmd = "SELECT App, BugType, ClassFileName, MethodName, CodeBlock, LineNumber FROM BugTable ORDER BY App";
+            String selcmd = "SELECT App FROM BugTable ORDER BY App";
 
             SqlCommand mySqlCommand = new SqlCommand(selcmd, mySqlConnection);
 
@@ -108,7 +109,7 @@ namespace BugTracker
             mySqlConnection =
                  new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Source\Repos\ASE\BugTracker\BugTracker\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
 
-            String selcmd = "SELECT App, Comment FROM ArchiveTable WHERE App = '" + txtArchiveList.Text + "'";
+            String selcmd = "SELECT App, Comment, Name, Date FROM ArchiveTable WHERE App = '" + txtBugList.Text + "'";
 
             SqlCommand mySqlCommand = new SqlCommand(selcmd, mySqlConnection);
 
@@ -122,14 +123,12 @@ namespace BugTracker
 
                 while (mySqlDataReader.Read())
                 {
-                    lbxArchiveList.Items.Add("Archived App Name: " + mySqlDataReader["App"]);
+                    lbxArchiveList.Items.Add("App Name: " + mySqlDataReader["App"]);
+                    lbxArchiveList.Items.Add("Name: " + mySqlDataReader["Name"]);
+                    lbxArchiveList.Items.Add("Date Archived: " + mySqlDataReader["Date"]);
                     lbxArchiveList.Items.Add("Archived Comment: ");
                     lbxArchiveList.Items.Add(mySqlDataReader["Comment"]);
                     lbxArchiveList.Items.Add("---------------------------------------------------");
-
-
-
-
 
                 }
             }
@@ -149,7 +148,7 @@ namespace BugTracker
             mySqlConnection =
                  new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Source\Repos\ASE\BugTracker\BugTracker\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
 
-            String selcmd = "SELECT App, Comment, Name, Date FROM CommentTable WHERE App = '" + txtCommentList.Text + "'";
+            String selcmd = "SELECT App, Comment, Name, Date FROM CommentTable WHERE App = '" + txtBugList.Text + "'";
 
             SqlCommand mySqlCommand = new SqlCommand(selcmd, mySqlConnection);
 
@@ -164,10 +163,10 @@ namespace BugTracker
                 while (mySqlDataReader.Read())
                 {
                     lbxCommentList.Items.Add("App Name: " + mySqlDataReader["App"]);
-                    lbxCommentList.Items.Add("Archived Comment: ");
-                    lbxCommentList.Items.Add(mySqlDataReader["Comment"]);
                     lbxCommentList.Items.Add("Name: " + mySqlDataReader["Name"]);
                     lbxCommentList.Items.Add("Date: " + mySqlDataReader["Date"]);
+                    lbxCommentList.Items.Add("Archived Comment: ");
+                    lbxCommentList.Items.Add(mySqlDataReader["Comment"]);
                     lbxCommentList.Items.Add("---------------------------------------------------");
                 }
             }
@@ -179,7 +178,9 @@ namespace BugTracker
             }
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void viewBugNames()
         {
             mySqlConnection =
@@ -202,6 +203,7 @@ namespace BugTracker
                     lbxBugView.Items.Add("App Name: " + mySqlDataReader["App"]);
                     lbxBugView.Items.Add("---------------------------------------------------");
                 }
+
             }
 
             catch (SqlException ex)
@@ -238,7 +240,7 @@ namespace BugTracker
         /// <param name="app"></param>
         /// <param name="comment"></param>
         /// <param name="commandString"></param>
-        public void archiveRecord(String app, String comment, String commandString)
+        public void archiveRecord(String app, String comment, String name, String date, String commandString)
         {
             try
             {
@@ -246,6 +248,8 @@ namespace BugTracker
 
                 cmdInsert.Parameters.AddWithValue("@app", app);
                 cmdInsert.Parameters.AddWithValue("@comment", comment);
+                cmdInsert.Parameters.AddWithValue("@name", name);
+                cmdInsert.Parameters.AddWithValue("@date", date);
                 cmdInsert.ExecuteNonQuery();
 
             }
@@ -261,7 +265,7 @@ namespace BugTracker
         /// <param name="app"></param>
         /// <param name="comment"></param>
         /// <param name="commandString"></param>
-        public void commentRecord(String app, String comment, String commandString)
+        public void commentRecord(String app, String comment, String name, String date, String commandString)
         {
             try
             {
@@ -269,6 +273,8 @@ namespace BugTracker
 
                 cmdInsert.Parameters.AddWithValue("@app", app);
                 cmdInsert.Parameters.AddWithValue("@comment", comment);
+                cmdInsert.Parameters.AddWithValue("@name", name);
+                cmdInsert.Parameters.AddWithValue("@date", date);
                 cmdInsert.ExecuteNonQuery();
 
             }
@@ -286,7 +292,10 @@ namespace BugTracker
         /// <param name="e"></param>
         private void btnBugList_Click(object sender, EventArgs e)
         {
+            txtSourceCodeView.Text = "";
             simpleBugList();
+            commentBugList();
+            archvieBugList();
         }
         /// <summary>
         /// Displays the ArchiveTable contents in the Archive listView
@@ -341,8 +350,8 @@ namespace BugTracker
         private void btnCommentBug_Click(object sender, EventArgs e)
         {
 
-            String commandStringArchive = "INSERT INTO CommentTable (App, Comment) VALUES ( @app, @comment)";
-            commentRecord(txtcommentappname.Text, txtcommentbug.Text, commandStringArchive);
+            String commandString = "INSERT INTO CommentTable (App, Comment, Name, Date) VALUES ( @app, @comment, @name, @date)";
+            commentRecord(txtcommentappname.Text, txtcommentbug.Text, txtUsernameComment.Text, txtCommentDate.Text, commandString);
             commentBugList();
             simpleBugList();
 
@@ -355,15 +364,55 @@ namespace BugTracker
         /// <param name="e"></param>
         private void btnRemove_Click_1(object sender, EventArgs e)
         {
+            
             //removes the row from the table from the specified row ID
-            String commandString = "DELETE FROM BugTable WHERE App = '" + txtArchive.Text + "'" + "INSERT INTO ArchiveTable (App, Comment) VALUES ( @app, @comment) DELETE FROM CommentTable WHERE App = '" + txtArchive.Text + "'";
-            archiveRecord(txtArchive.Text, txtcommentarchive.Text, commandString);
+            String commandString = "UPDATE BugTable SET Comment = '" + txtcommentarchive.Text +
+                "', Name = '" + txtUserNameArchive.Text + "', Date = '" + txtDateArchive.Text +
+                "' WHERE App = '" + txtArchive.Text +
+                "' INSERT INTO ArchiveTable(BugType, ClassFileName, MethodName, CodeBlock, LineNumber, Error, Cause, Code, App, Name, Date, Comment) SELECT BugType, ClassFileName, MethodName, CodeBlock, LineNumber, Error, Cause, Code, App, Name, Date, Comment FROM BugTable WHERE App = '" + txtArchive.Text
+                + "'DELETE FROM BugTable WHERE App = '" + txtArchive.Text + "'";
+            archiveRecord(txtArchive.Text, txtcommentarchive.Text, txtUserNameArchive.Text, txtDateArchive.Text, commandString);
             archvieBugList();
             simpleBugList();
             commentBugList();
             viewBugNames();
+        }
+
+        /// <summary>
+        /// Colour codes the source code and outputs to a html file.
+        /// </summary>
+        public void ColourCodeCSharp()
+        {
+
+            string colourizedSourceCode = new CodeColorizer().Colorize(txtSourceCodeView.Text, Languages.CSharp);
+
+            string html = ("<!doctype html><head><meta charset=\"utf-8\" <title> Coloured Code </title> </head> <body>" + colourizedSourceCode + "</body></html>");
+            sourceCodeWebView.DocumentText = html;
 
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        public void ColourCodeHTML()
+        {
+
+            string colourizedSourceCode = new CodeColorizer().Colorize(txtSourceCodeView.Text, Languages.Html);
+
+            string html = ("<!doctype html><head><meta charset=\"utf-8\" <title> Coloured Code </title> </head> <body>" + colourizedSourceCode + "</body></html>");
+            sourceCodeWebView.DocumentText = html;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public void ColourCodeJava()
+        {
+
+            string colourizedSourceCode = new CodeColorizer().Colorize(txtSourceCodeView.Text, Languages.Java);
+
+            string html = ("<!doctype html><head><meta charset=\"utf-8\" <title> Coloured Code </title> </head> <body>" + colourizedSourceCode + "</body></html>");
+            sourceCodeWebView.DocumentText = html;
+        }
+
         /// <summary>
         /// Updates the source code within the table
         /// </summary>
@@ -371,11 +420,37 @@ namespace BugTracker
         /// <param name="e"></param>
         private void fixCode_Click(object sender, EventArgs e)
         {
-            String commandString = "UPDATE BugTable SET Code = '" + txtSourceCodeView.Text + "' WHERE App = '" + txtBugList.Text + "'"; 
-            SqlCommand cmdfixCode = new SqlCommand(commandString, mySqlConnection);
+            String commandString2 = "UPDATE BugTable SET Code = '" + txtSourceCodeView.Text + "' WHERE App = '" + txtBugList.Text + "'";
+            mySqlConnection.Close();
+            mySqlConnection.Open();
+            SqlCommand cmdfixCode = new SqlCommand(commandString2, mySqlConnection);
             cmdfixCode.ExecuteNonQuery();
             MessageBox.Show("Code Fixed!");
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (cmbLanguage.Text == "C#")
+            {
+                ColourCodeCSharp();
+            }
+            else if (cmbLanguage.Text == "HTML")
+            {
+                ColourCodeHTML();
+            }
+            else if (cmbLanguage.Text == "Java")
+            {
+                ColourCodeJava();
+            }
+            else
+            {
+                MessageBox.Show("Incorrect Code Type!");
+            }
+            
+        }
     }
 }

@@ -54,12 +54,6 @@
             this.btnBugList = new System.Windows.Forms.Button();
             this.txtBugList = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.btnArchiveList = new System.Windows.Forms.Button();
-            this.txtArchiveList = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnCommentList = new System.Windows.Forms.Button();
-            this.txtCommentList = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -76,6 +70,9 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtUserNameArchive = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cmbLanguage = new System.Windows.Forms.ComboBox();
+            this.sourceCodeWebView = new System.Windows.Forms.WebBrowser();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,7 +112,7 @@
             this.txtArchive.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txtArchive.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtArchive.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtArchive.Location = new System.Drawing.Point(956, 496);
+            this.txtArchive.Location = new System.Drawing.Point(1249, 496);
             this.txtArchive.Multiline = true;
             this.txtArchive.Name = "txtArchive";
             this.txtArchive.Size = new System.Drawing.Size(184, 27);
@@ -164,7 +161,7 @@
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1455, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(2030, 27);
             this.menuStrip1.TabIndex = 46;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -182,28 +179,28 @@
             // restoreToolStripMenuItem
             // 
             this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
-            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
+            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.restoreToolStripMenuItem.Text = "Restore";
             this.restoreToolStripMenuItem.Click += new System.EventHandler(this.restoreToolStripMenuItem_Click_1);
             // 
             // minimizedToolStripMenuItem
             // 
             this.minimizedToolStripMenuItem.Name = "minimizedToolStripMenuItem";
-            this.minimizedToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
+            this.minimizedToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.minimizedToolStripMenuItem.Text = "Minimize";
             this.minimizedToolStripMenuItem.Click += new System.EventHandler(this.minimizedToolStripMenuItem_Click);
             // 
             // maximizedToolStripMenuItem
             // 
             this.maximizedToolStripMenuItem.Name = "maximizedToolStripMenuItem";
-            this.maximizedToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
+            this.maximizedToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.maximizedToolStripMenuItem.Text = "Maximize";
             this.maximizedToolStripMenuItem.Click += new System.EventHandler(this.maximizedToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -242,7 +239,7 @@
             this.txtcommentappname.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txtcommentappname.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtcommentappname.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtcommentappname.Location = new System.Drawing.Point(1248, 496);
+            this.txtcommentappname.Location = new System.Drawing.Point(956, 496);
             this.txtcommentappname.Multiline = true;
             this.txtcommentappname.Name = "txtcommentappname";
             this.txtcommentappname.Size = new System.Drawing.Size(185, 27);
@@ -302,7 +299,7 @@
             this.lbxCommentList.ItemHeight = 19;
             this.lbxCommentList.Location = new System.Drawing.Point(878, 135);
             this.lbxCommentList.Name = "lbxCommentList";
-            this.lbxCommentList.Size = new System.Drawing.Size(262, 247);
+            this.lbxCommentList.Size = new System.Drawing.Size(262, 323);
             this.lbxCommentList.TabIndex = 54;
             // 
             // lbxArchiveList
@@ -315,7 +312,7 @@
             this.lbxArchiveList.ItemHeight = 19;
             this.lbxArchiveList.Location = new System.Drawing.Point(1170, 135);
             this.lbxArchiveList.Name = "lbxArchiveList";
-            this.lbxArchiveList.Size = new System.Drawing.Size(262, 247);
+            this.lbxArchiveList.Size = new System.Drawing.Size(262, 323);
             this.lbxArchiveList.TabIndex = 55;
             // 
             // btnBugList
@@ -350,72 +347,6 @@
             this.label13.Size = new System.Drawing.Size(84, 19);
             this.label13.TabIndex = 58;
             this.label13.Text = "App Name: ";
-            // 
-            // btnArchiveList
-            // 
-            this.btnArchiveList.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnArchiveList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnArchiveList.Font = new System.Drawing.Font("Calibri", 12F);
-            this.btnArchiveList.Location = new System.Drawing.Point(1257, 421);
-            this.btnArchiveList.Name = "btnArchiveList";
-            this.btnArchiveList.Size = new System.Drawing.Size(104, 30);
-            this.btnArchiveList.TabIndex = 60;
-            this.btnArchiveList.Text = "View Bug";
-            this.btnArchiveList.UseVisualStyleBackColor = false;
-            this.btnArchiveList.Click += new System.EventHandler(this.btnArchiveList_Click);
-            // 
-            // txtArchiveList
-            // 
-            this.txtArchiveList.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.txtArchiveList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtArchiveList.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtArchiveList.Location = new System.Drawing.Point(1257, 388);
-            this.txtArchiveList.Name = "txtArchiveList";
-            this.txtArchiveList.Size = new System.Drawing.Size(176, 20);
-            this.txtArchiveList.TabIndex = 59;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label1.Location = new System.Drawing.Point(1167, 387);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 19);
-            this.label1.TabIndex = 61;
-            this.label1.Text = "App Name: ";
-            // 
-            // btnCommentList
-            // 
-            this.btnCommentList.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnCommentList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCommentList.Font = new System.Drawing.Font("Calibri", 12F);
-            this.btnCommentList.Location = new System.Drawing.Point(965, 422);
-            this.btnCommentList.Name = "btnCommentList";
-            this.btnCommentList.Size = new System.Drawing.Size(104, 30);
-            this.btnCommentList.TabIndex = 63;
-            this.btnCommentList.Text = "View Bug";
-            this.btnCommentList.UseVisualStyleBackColor = false;
-            this.btnCommentList.Click += new System.EventHandler(this.btnCommentList_Click);
-            // 
-            // txtCommentList
-            // 
-            this.txtCommentList.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.txtCommentList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCommentList.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtCommentList.Location = new System.Drawing.Point(965, 389);
-            this.txtCommentList.Name = "txtCommentList";
-            this.txtCommentList.Size = new System.Drawing.Size(176, 20);
-            this.txtCommentList.TabIndex = 62;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label2.Location = new System.Drawing.Point(874, 389);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 19);
-            this.label2.TabIndex = 64;
-            this.label2.Text = "App Name: ";
             // 
             // label3
             // 
@@ -452,10 +383,10 @@
             this.txtSourceCodeView.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.txtSourceCodeView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSourceCodeView.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtSourceCodeView.Location = new System.Drawing.Point(589, 161);
+            this.txtSourceCodeView.Location = new System.Drawing.Point(589, 197);
             this.txtSourceCodeView.Multiline = true;
             this.txtSourceCodeView.Name = "txtSourceCodeView";
-            this.txtSourceCodeView.Size = new System.Drawing.Size(262, 704);
+            this.txtSourceCodeView.Size = new System.Drawing.Size(262, 668);
             this.txtSourceCodeView.TabIndex = 68;
             // 
             // label6
@@ -588,12 +519,53 @@
             this.label14.TabIndex = 77;
             this.label14.Text = "User Name:";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Calibri", 12F);
+            this.button1.Location = new System.Drawing.Point(589, 163);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(262, 30);
+            this.button1.TabIndex = 81;
+            this.button1.Text = "View Code with Colour Syntax";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cmbLanguage
+            // 
+            this.cmbLanguage.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.cmbLanguage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbLanguage.Font = new System.Drawing.Font("Calibri", 12F);
+            this.cmbLanguage.FormattingEnabled = true;
+            this.cmbLanguage.Items.AddRange(new object[] {
+            "C#",
+            "HTML",
+            "Java"});
+            this.cmbLanguage.Location = new System.Drawing.Point(589, 134);
+            this.cmbLanguage.Name = "cmbLanguage";
+            this.cmbLanguage.Size = new System.Drawing.Size(262, 27);
+            this.cmbLanguage.TabIndex = 82;
+            this.cmbLanguage.Text = "Pick Code Type";
+            // 
+            // sourceCodeWebView
+            // 
+            this.sourceCodeWebView.Location = new System.Drawing.Point(1438, 134);
+            this.sourceCodeWebView.MinimumSize = new System.Drawing.Size(20, 20);
+            this.sourceCodeWebView.Name = "sourceCodeWebView";
+            this.sourceCodeWebView.ScriptErrorsSuppressed = true;
+            this.sourceCodeWebView.Size = new System.Drawing.Size(580, 766);
+            this.sourceCodeWebView.TabIndex = 83;
+            // 
             // frmDeveloper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1455, 909);
+            this.ClientSize = new System.Drawing.Size(2030, 909);
+            this.Controls.Add(this.sourceCodeWebView);
+            this.Controls.Add(this.cmbLanguage);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtDateArchive);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtUserNameArchive);
@@ -610,12 +582,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnCommentList);
-            this.Controls.Add(this.txtCommentList);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnArchiveList);
-            this.Controls.Add(this.txtArchiveList);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBugList);
             this.Controls.Add(this.txtBugList);
             this.Controls.Add(this.label13);
@@ -670,12 +636,6 @@
         private System.Windows.Forms.Button btnBugList;
         private System.Windows.Forms.TextBox txtBugList;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button btnArchiveList;
-        private System.Windows.Forms.TextBox txtArchiveList;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnCommentList;
-        private System.Windows.Forms.TextBox txtCommentList;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -695,5 +655,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtUserNameArchive;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cmbLanguage;
+        private System.Windows.Forms.WebBrowser sourceCodeWebView;
     }
 }
