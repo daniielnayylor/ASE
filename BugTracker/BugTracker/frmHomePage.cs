@@ -19,6 +19,55 @@ namespace BugTracker
         {
             InitializeComponent();
         }
+
+        public frmHelp frmHelp
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public frmBlackTester frmBlackTester
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public frmWhiteTest frmWhiteTest
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public frmLogin frmLogin
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         /// <summary>
         /// Opens the help form.
         /// </summary>

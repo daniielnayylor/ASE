@@ -16,9 +16,16 @@ namespace BugTracker
     /// </summary>
     public partial class frmBlackTester : Form
     {
+        public string appname;
+        public string cause;
+        public string error;
+        public static bool rtnvalue;
         SqlConnection mySqlConnection;
         public frmBlackTester()
         {
+          
+
+
             InitializeComponent();
             openConnection();
         }
@@ -63,10 +70,13 @@ namespace BugTracker
         /// <returns></returns>
         public bool checkInputs()
         {
-            bool rtnvalue = true;
-            if (string.IsNullOrEmpty(txtAppName.Text) ||
-                string.IsNullOrEmpty(txtCause.Text) ||
-                string.IsNullOrEmpty(txtError.Text))
+            rtnvalue = true;
+            appname = txtAppName.Text;
+            cause = txtCause.Text;
+            error = txtError.Text;
+            if (string.IsNullOrEmpty(appname) ||
+                string.IsNullOrEmpty(cause) ||
+                string.IsNullOrEmpty(error))
             {
                 MessageBox.Show("Error: Please check your inputs");
                 rtnvalue = false;

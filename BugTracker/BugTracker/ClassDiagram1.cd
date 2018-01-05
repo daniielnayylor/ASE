@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BugTracker.frmBlackTester">
+    <Position X="12.5" Y="1.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>TSAEAQIAACAFApICAAWBAAACAAAAABAACiEAAAAQAAA=</HashCode>
+      <FileName>frmBlackTester.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BugTracker.frmDeveloper">
+    <Position X="10.25" Y="3.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>/yAGARKQADIAQBMUMgiPAgkCBUAMCAAAAloghCAUIDE=</HashCode>
+      <FileName>frmDeveloper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BugTracker.frmHomePage">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>DSAEAwAAACABApcCAAiQAAACAAAgAAACAgAwAAAAEAA=</HashCode>
+      <FileName>frmHomePage.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="frmHelp" />
+      <Property Name="frmBlackTester" />
+      <Property Name="frmWhiteTest" />
+      <Property Name="frmLogin" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BugTracker.frmRegister">
+    <Position X="4.75" Y="3.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAgAEAAAACAAABAAAAChAAACAAAAAIAAABAAAAAQAAA=</HashCode>
+      <FileName>frmRegister.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BugTracker.frmLogin">
+    <Position X="7.5" Y="3.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gEgAAAAAACAAABAAAACBABAKAAAAAAAAABAAAAAwAEA=</HashCode>
+      <FileName>frmLogin.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="frmRegister" />
+      <Property Name="frmDeveloper" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BugTracker.frmHelp">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>DSAEAQIAACABAhICAACBAAACAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>frmHelp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BugTracker.frmWhiteTest">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>/yAGgUAEEDoAILYCEoSIAIICBBAAiQAAAgMAAAAQAHM=</HashCode>
+      <FileName>frmWhiteTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

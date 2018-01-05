@@ -22,6 +22,31 @@ namespace BugTracker
             openConnection();
             InitializeComponent();
         }
+
+        public frmRegister frmRegister
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public frmDeveloper frmDeveloper
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         /// <summary>
         /// Opens the connection to the database using the SQL Database connection string when the form is opened.
         /// </summary>
