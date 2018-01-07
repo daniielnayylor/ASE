@@ -13,3 +13,71 @@ F:\Source\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmHelp.resources
 F:\Source\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmHomePage.resources
 F:\Source\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmLogin.resources
 F:\Source\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmRegister.resources
+C:\Users\c3431621\Downloads\Repos - 29th Dec\Repos\ASE\BugTracker\BugTracker\bin\Debug\BugTracker.exe.config
+C:\Users\c3431621\Downloads\Repos - 29th Dec\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.exe
+C:\Users\c3431621\Downloads\Repos - 29th Dec\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.pdb
+C:\Users\c3431621\Downloads\Repos - 29th Dec\Repos\ASE\BugTracker\BugTracker\bin\Debug\BugTracker.exe
+C:\Users\c3431621\Downloads\Repos - 29th Dec\Repos\ASE\BugTracker\BugTracker\bin\Debug\BugTracker.pdb
+C:\Users\c3431621\Downloads\Repos - 29th Dec\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.csprojResolveAssemblyReference.cache
+C:\Users\c3431621\Downloads\Repos - 29th Dec\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmDeveloper.resources
+C:\Users\c3431621\Downloads\Repos - 29th Dec\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmHelp.resources
+C:\Users\c3431621\Downloads\Repos - 29th Dec\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmHomePage.resources
+C:\Users\c3431621\Downloads\Repos - 29th Dec\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmRegister.resources
+C:\Users\c3431621\Downloads\Repos - 29th Dec\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmWhiteTest.resources
+C:\Users\c3431621\Downloads\Repos - 29th Dec\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmBlackTester.resources
+C:\Users\c3431621\Downloads\Repos - 29th Dec\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmLogin.resources
+C:\Users\c3431621\Downloads\Repos - 29th Dec\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.Properties.Resources.resources
+C:\Users\c3431621\Downloads\Repos - 29th Dec\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.csproj.GenerateResource.Cache
+C:\Users\c3431621\Downloads\Repos - 29th Dec\Repos\ASE\BugTracker\BugTracker\bin\Debug\ColorCode.dll
+C:\Users\c3431621\Downloads\Repos - 29th Dec\Repos\ASE\BugTracker\BugTracker\bin\Debug\ColorCode.pdb
+F:\Repos - 3rd Jan\Repos - 3rd Jan\Repos\ASE\BugTracker\BugTracker\bin\Debug\BugTracker.exe.config
+F:\Repos - 3rd Jan\Repos - 3rd Jan\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.exe
+F:\Repos - 3rd Jan\Repos - 3rd Jan\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.pdb
+F:\Repos - 3rd Jan\Repos - 3rd Jan\Repos\ASE\BugTracker\BugTracker\bin\Debug\BugTracker.exe
+F:\Repos - 3rd Jan\Repos - 3rd Jan\Repos\ASE\BugTracker\BugTracker\bin\Debug\BugTracker.pdb
+F:\Repos - 3rd Jan\Repos - 3rd Jan\Repos\ASE\BugTracker\BugTracker\bin\Debug\ColorCode.pdb
+F:\Repos - 3rd Jan\Repos - 3rd Jan\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.csprojResolveAssemblyReference.cache
+F:\Repos - 3rd Jan\Repos - 3rd Jan\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmDeveloper.resources
+F:\Repos - 3rd Jan\Repos - 3rd Jan\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmHelp.resources
+F:\Repos - 3rd Jan\Repos - 3rd Jan\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmHomePage.resources
+F:\Repos - 3rd Jan\Repos - 3rd Jan\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmRegister.resources
+F:\Repos - 3rd Jan\Repos - 3rd Jan\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmWhiteTest.resources
+F:\Repos - 3rd Jan\Repos - 3rd Jan\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmBlackTester.resources
+F:\Repos - 3rd Jan\Repos - 3rd Jan\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmLogin.resources
+F:\Repos - 3rd Jan\Repos - 3rd Jan\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.Properties.Resources.resources
+F:\Repos - 3rd Jan\Repos - 3rd Jan\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.csproj.GenerateResource.Cache
+F:\Repos - 3rd Jan\Repos - 4th Jan\Repos - 4th Jan\Repos\ASE\BugTracker\BugTracker\bin\Debug\BugTracker.exe.config
+F:\Repos - 3rd Jan\Repos - 4th Jan\Repos - 4th Jan\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.exe
+F:\Repos - 3rd Jan\Repos - 4th Jan\Repos - 4th Jan\Repos\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.pdb
+F:\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\bin\Debug\BugTracker.exe.config
+F:\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.exe
+F:\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.pdb
+F:\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\bin\Debug\BugTracker.exe
+F:\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\bin\Debug\BugTracker.pdb
+F:\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\bin\Debug\ColorCode.pdb
+F:\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.csprojResolveAssemblyReference.cache
+F:\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmDeveloper.resources
+F:\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmHelp.resources
+F:\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmHomePage.resources
+F:\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmRegister.resources
+F:\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmWhiteTest.resources
+F:\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmBlackTester.resources
+F:\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmLogin.resources
+F:\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.Properties.Resources.resources
+F:\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.csproj.GenerateResource.Cache
+C:\Users\c3431621\Documents\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\bin\Debug\BugTracker.exe.config
+C:\Users\c3431621\Documents\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.exe
+C:\Users\c3431621\Documents\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.pdb
+C:\Users\c3431621\Documents\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\bin\Debug\BugTracker.exe
+C:\Users\c3431621\Documents\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\bin\Debug\BugTracker.pdb
+C:\Users\c3431621\Documents\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\bin\Debug\ColorCode.pdb
+C:\Users\c3431621\Documents\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.csprojResolveAssemblyReference.cache
+C:\Users\c3431621\Documents\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmDeveloper.resources
+C:\Users\c3431621\Documents\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmHelp.resources
+C:\Users\c3431621\Documents\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmHomePage.resources
+C:\Users\c3431621\Documents\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmRegister.resources
+C:\Users\c3431621\Documents\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmWhiteTest.resources
+C:\Users\c3431621\Documents\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmBlackTester.resources
+C:\Users\c3431621\Documents\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.frmLogin.resources
+C:\Users\c3431621\Documents\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.Properties.Resources.resources
+C:\Users\c3431621\Documents\Bug Tracker - c3431621\ASE\BugTracker\BugTracker\obj\Debug\BugTracker.csproj.GenerateResource.Cache
