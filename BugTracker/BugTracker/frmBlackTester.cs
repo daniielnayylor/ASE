@@ -16,25 +16,24 @@ namespace BugTracker
     /// </summary>
     public partial class frmBlackTester : Form
     {
-        public string appname;
-        public string cause;
-        public string error;
+        frmHomePage frmHomePage;
         public static bool rtnvalue;
         SqlConnection mySqlConnection;
-        public frmBlackTester()
+        public frmBlackTester(frmHomePage frmHomePage)
         {
-          
-
-
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
             openConnection();
+            this.frmHomePage = frmHomePage;
         }
         /// <summary>
         /// Opens the connection to the database using the SQL Database connection string when the form is opened.
         /// </summary>
         public void openConnection()
         {
+            //the connection string searches for the database .mdf file
             mySqlConnection =
+                 //"MultipleActiveResultsSets=true" allows for multiple SQLDataReaders to be open so they don't need to be opened and closed all the time, useful but I guess memory inefficient
                  new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Source\Repos\ASE\BugTracker\BugTracker\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
 
             String selcmd = "SELECT App, Error, Cause FROM BugTable ORDER BY App";
@@ -44,7 +43,6 @@ namespace BugTracker
             try
             {
                 mySqlConnection.Open();
-
                 SqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
 
             }
@@ -52,7 +50,7 @@ namespace BugTracker
             catch (SqlException ex)
             {
 
-                // MessageBox.Show(bugID + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -65,18 +63,15 @@ namespace BugTracker
             txtAppName.Text = txtCause.Text = txtError.Text = "";
         }
         /// <summary>
-        /// Checks the text boxes to make sure they aren't empty before submitting a bug.
+        /// Checks the text boxes to make sure they aren't empty or full of white space before submitting a bug.
         /// </summary>
         /// <returns></returns>
         public bool checkInputs()
         {
             rtnvalue = true;
-            appname = txtAppName.Text;
-            cause = txtCause.Text;
-            error = txtError.Text;
-            if (string.IsNullOrEmpty(appname) ||
-                string.IsNullOrEmpty(cause) ||
-                string.IsNullOrEmpty(error))
+            if (string.IsNullOrEmpty(txtAppName.Text) ||
+                string.IsNullOrEmpty(txtCause.Text) ||
+                string.IsNullOrEmpty(txtError.Text))
             {
                 MessageBox.Show("Error: Please check your inputs");
                 rtnvalue = false;
@@ -84,7 +79,7 @@ namespace BugTracker
             return (rtnvalue);
         }
         /// <summary>
-        /// Creates the references for App Name, Error and Cause for the BugTable table
+        /// Assigns a string value to each @string value for the database bug table
         /// </summary>
         /// <param name="appName"></param>
         /// <param name="error"></param>
@@ -92,7 +87,6 @@ namespace BugTracker
         /// <param name="commandString"></param>
         public void insertRecord(String appName, String error, String cause, String commandString)
         {
-
             try
             {
                 SqlCommand cmdInsert = new SqlCommand(commandString, mySqlConnection);
@@ -105,25 +99,22 @@ namespace BugTracker
             {
                 MessageBox.Show(appName + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
         /// <summary>
         /// Inserts App Name, Error and Cause into the BugTable table.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button2_Click(object sender, EventArgs e)
+        private void reportBug_Click(object sender, EventArgs e)
         {
             if (checkInputs())
             {
-
                 String commandString = "INSERT INTO BugTable(App, Error, Cause) VALUES (@app, @error, @cause)";
-
                 insertRecord(txtAppName.Text, txtError.Text, txtCause.Text, commandString);
-                openConnection();
                 cleartxtBoxes();
                 MessageBox.Show("Bug Successfully Reported");
                 this.Close();
+                frmHomePage.Show();
             }
         }
         /// <summary>
@@ -143,6 +134,7 @@ namespace BugTracker
         /// <param name="e"></param>
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            frmHomePage.Show();
             this.Close();
         }
         /// <summary>

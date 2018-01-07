@@ -59,10 +59,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.minimizedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maximizedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEditBug = new System.Windows.Forms.Button();
             this.txtSourceCodeView = new System.Windows.Forms.TextBox();
@@ -84,7 +84,7 @@
             this.btnAdd.Location = new System.Drawing.Point(182, 808);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(180, 30);
-            this.btnAdd.TabIndex = 6;
+            this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Report Bug";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -336,7 +336,7 @@
             this.txtcommentbug.Multiline = true;
             this.txtcommentbug.Name = "txtcommentbug";
             this.txtcommentbug.Size = new System.Drawing.Size(262, 258);
-            this.txtcommentbug.TabIndex = 36;
+            this.txtcommentbug.TabIndex = 12;
             // 
             // txtcommentappname
             // 
@@ -347,7 +347,7 @@
             this.txtcommentappname.Multiline = true;
             this.txtcommentappname.Name = "txtcommentappname";
             this.txtcommentappname.Size = new System.Drawing.Size(262, 46);
-            this.txtcommentappname.TabIndex = 37;
+            this.txtcommentappname.TabIndex = 11;
             // 
             // label18
             // 
@@ -377,7 +377,7 @@
             this.btnCommentBug.Location = new System.Drawing.Point(1072, 475);
             this.btnCommentBug.Name = "btnCommentBug";
             this.btnCommentBug.Size = new System.Drawing.Size(130, 30);
-            this.btnCommentBug.TabIndex = 40;
+            this.btnCommentBug.TabIndex = 13;
             this.btnCommentBug.Text = "Comment Bug";
             this.btnCommentBug.UseVisualStyleBackColor = false;
             this.btnCommentBug.Click += new System.EventHandler(this.btnCommentBug_Click);
@@ -403,7 +403,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1288, 27);
-            this.menuStrip1.TabIndex = 46;
+            this.menuStrip1.TabIndex = 14;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
@@ -417,33 +417,33 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 23);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // closeToolStripMenuItem
-            // 
-            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.closeToolStripMenuItem.Text = "Close";
-            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
-            // 
             // restoreToolStripMenuItem
             // 
             this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
-            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
             this.restoreToolStripMenuItem.Text = "Restore";
             this.restoreToolStripMenuItem.Click += new System.EventHandler(this.restoreToolStripMenuItem_Click);
             // 
             // minimizedToolStripMenuItem
             // 
             this.minimizedToolStripMenuItem.Name = "minimizedToolStripMenuItem";
-            this.minimizedToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.minimizedToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
             this.minimizedToolStripMenuItem.Text = "Minimize";
             this.minimizedToolStripMenuItem.Click += new System.EventHandler(this.minimizedToolStripMenuItem_Click);
             // 
             // maximizedToolStripMenuItem
             // 
             this.maximizedToolStripMenuItem.Name = "maximizedToolStripMenuItem";
-            this.maximizedToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.maximizedToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
             this.maximizedToolStripMenuItem.Text = "Maximize";
             this.maximizedToolStripMenuItem.Click += new System.EventHandler(this.maximizedToolStripMenuItem_Click);
+            // 
+            // closeToolStripMenuItem
+            // 
+            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
+            this.closeToolStripMenuItem.Text = "Close";
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -460,7 +460,7 @@
             this.btnEditBug.Location = new System.Drawing.Point(182, 844);
             this.btnEditBug.Name = "btnEditBug";
             this.btnEditBug.Size = new System.Drawing.Size(180, 30);
-            this.btnEditBug.TabIndex = 47;
+            this.btnEditBug.TabIndex = 8;
             this.btnEditBug.Text = "Edit Bug";
             this.btnEditBug.UseVisualStyleBackColor = false;
             this.btnEditBug.Click += new System.EventHandler(this.btnEditBug_Click);
@@ -474,6 +474,7 @@
             this.txtSourceCodeView.Multiline = true;
             this.txtSourceCodeView.Name = "txtSourceCodeView";
             this.txtSourceCodeView.ReadOnly = true;
+            this.txtSourceCodeView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtSourceCodeView.Size = new System.Drawing.Size(262, 324);
             this.txtSourceCodeView.TabIndex = 48;
             // 
@@ -495,7 +496,7 @@
             this.txtsimpleview.Location = new System.Drawing.Point(649, 814);
             this.txtsimpleview.Name = "txtsimpleview";
             this.txtsimpleview.Size = new System.Drawing.Size(176, 20);
-            this.txtsimpleview.TabIndex = 8;
+            this.txtsimpleview.TabIndex = 9;
             // 
             // btnSimpleView
             // 
@@ -505,7 +506,7 @@
             this.btnSimpleView.Location = new System.Drawing.Point(628, 844);
             this.btnSimpleView.Name = "btnSimpleView";
             this.btnSimpleView.Size = new System.Drawing.Size(176, 30);
-            this.btnSimpleView.TabIndex = 9;
+            this.btnSimpleView.TabIndex = 10;
             this.btnSimpleView.Text = "View Bug";
             this.btnSimpleView.UseVisualStyleBackColor = false;
             this.btnSimpleView.Click += new System.EventHandler(this.btnSimpleView_Click);
@@ -529,7 +530,7 @@
             this.txtSourceCode.Multiline = true;
             this.txtSourceCode.Name = "txtSourceCode";
             this.txtSourceCode.Size = new System.Drawing.Size(180, 189);
-            this.txtSourceCode.TabIndex = 50;
+            this.txtSourceCode.TabIndex = 6;
             // 
             // label15
             // 
@@ -586,7 +587,9 @@
             this.Controls.Add(this.lbxBugs);
             this.Controls.Add(this.btnAdd);
             this.HelpButton = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmWhiteTest";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bug Tracker";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

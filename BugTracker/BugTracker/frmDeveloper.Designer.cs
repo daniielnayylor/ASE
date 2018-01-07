@@ -85,7 +85,7 @@
             this.txtcommentarchive.Multiline = true;
             this.txtcommentarchive.Name = "txtcommentarchive";
             this.txtcommentarchive.Size = new System.Drawing.Size(262, 242);
-            this.txtcommentarchive.TabIndex = 34;
+            this.txtcommentarchive.TabIndex = 14;
             // 
             // label16
             // 
@@ -116,7 +116,7 @@
             this.txtArchive.Multiline = true;
             this.txtArchive.Name = "txtArchive";
             this.txtArchive.Size = new System.Drawing.Size(184, 27);
-            this.txtArchive.TabIndex = 33;
+            this.txtArchive.TabIndex = 11;
             // 
             // label9
             // 
@@ -136,7 +136,7 @@
             this.btnRemove.Location = new System.Drawing.Point(1171, 871);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(262, 30);
-            this.btnRemove.TabIndex = 35;
+            this.btnRemove.TabIndex = 15;
             this.btnRemove.Text = "Remove Bug";
             this.btnRemove.UseVisualStyleBackColor = false;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click_1);
@@ -179,28 +179,28 @@
             // restoreToolStripMenuItem
             // 
             this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
-            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
             this.restoreToolStripMenuItem.Text = "Restore";
             this.restoreToolStripMenuItem.Click += new System.EventHandler(this.restoreToolStripMenuItem_Click_1);
             // 
             // minimizedToolStripMenuItem
             // 
             this.minimizedToolStripMenuItem.Name = "minimizedToolStripMenuItem";
-            this.minimizedToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.minimizedToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
             this.minimizedToolStripMenuItem.Text = "Minimize";
             this.minimizedToolStripMenuItem.Click += new System.EventHandler(this.minimizedToolStripMenuItem_Click);
             // 
             // maximizedToolStripMenuItem
             // 
             this.maximizedToolStripMenuItem.Name = "maximizedToolStripMenuItem";
-            this.maximizedToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.maximizedToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
             this.maximizedToolStripMenuItem.Text = "Maximize";
             this.maximizedToolStripMenuItem.Click += new System.EventHandler(this.maximizedToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -219,7 +219,7 @@
             this.btnCommentBug.Location = new System.Drawing.Point(878, 871);
             this.btnCommentBug.Name = "btnCommentBug";
             this.btnCommentBug.Size = new System.Drawing.Size(263, 30);
-            this.btnCommentBug.TabIndex = 52;
+            this.btnCommentBug.TabIndex = 10;
             this.btnCommentBug.Text = "Comment Bug";
             this.btnCommentBug.UseVisualStyleBackColor = false;
             this.btnCommentBug.Click += new System.EventHandler(this.btnCommentBug_Click);
@@ -243,7 +243,7 @@
             this.txtcommentappname.Multiline = true;
             this.txtcommentappname.Name = "txtcommentappname";
             this.txtcommentappname.Size = new System.Drawing.Size(185, 27);
-            this.txtcommentappname.TabIndex = 49;
+            this.txtcommentappname.TabIndex = 6;
             // 
             // label18
             // 
@@ -264,7 +264,7 @@
             this.txtcommentbug.Multiline = true;
             this.txtcommentbug.Name = "txtcommentbug";
             this.txtcommentbug.Size = new System.Drawing.Size(262, 242);
-            this.txtcommentbug.TabIndex = 48;
+            this.txtcommentbug.TabIndex = 9;
             // 
             // label17
             // 
@@ -323,7 +323,7 @@
             this.btnBugList.Location = new System.Drawing.Point(306, 161);
             this.btnBugList.Name = "btnBugList";
             this.btnBugList.Size = new System.Drawing.Size(262, 30);
-            this.btnBugList.TabIndex = 57;
+            this.btnBugList.TabIndex = 1;
             this.btnBugList.Text = "View Bug";
             this.btnBugList.UseVisualStyleBackColor = false;
             this.btnBugList.Click += new System.EventHandler(this.btnBugList_Click);
@@ -336,7 +336,7 @@
             this.txtBugList.Location = new System.Drawing.Point(392, 135);
             this.txtBugList.Name = "txtBugList";
             this.txtBugList.Size = new System.Drawing.Size(176, 20);
-            this.txtBugList.TabIndex = 56;
+            this.txtBugList.TabIndex = 0;
             // 
             // label13
             // 
@@ -387,7 +387,7 @@
             this.txtSourceCodeView.Multiline = true;
             this.txtSourceCodeView.Name = "txtSourceCodeView";
             this.txtSourceCodeView.Size = new System.Drawing.Size(262, 668);
-            this.txtSourceCodeView.TabIndex = 68;
+            this.txtSourceCodeView.TabIndex = 4;
             // 
             // label6
             // 
@@ -430,7 +430,7 @@
             this.fixCode.Location = new System.Drawing.Point(589, 871);
             this.fixCode.Name = "fixCode";
             this.fixCode.Size = new System.Drawing.Size(262, 30);
-            this.fixCode.TabIndex = 72;
+            this.fixCode.TabIndex = 5;
             this.fixCode.Text = "Fix Code";
             this.fixCode.UseVisualStyleBackColor = false;
             this.fixCode.Click += new System.EventHandler(this.fixCode_Click);
@@ -454,7 +454,7 @@
             this.txtUsernameComment.Multiline = true;
             this.txtUsernameComment.Name = "txtUsernameComment";
             this.txtUsernameComment.Size = new System.Drawing.Size(184, 27);
-            this.txtUsernameComment.TabIndex = 74;
+            this.txtUsernameComment.TabIndex = 7;
             // 
             // label11
             // 
@@ -475,7 +475,7 @@
             this.txtCommentDate.Multiline = true;
             this.txtCommentDate.Name = "txtCommentDate";
             this.txtCommentDate.Size = new System.Drawing.Size(184, 27);
-            this.txtCommentDate.TabIndex = 76;
+            this.txtCommentDate.TabIndex = 8;
             // 
             // txtDateArchive
             // 
@@ -486,7 +486,7 @@
             this.txtDateArchive.Multiline = true;
             this.txtDateArchive.Name = "txtDateArchive";
             this.txtDateArchive.Size = new System.Drawing.Size(184, 27);
-            this.txtDateArchive.TabIndex = 80;
+            this.txtDateArchive.TabIndex = 13;
             // 
             // label12
             // 
@@ -507,7 +507,7 @@
             this.txtUserNameArchive.Multiline = true;
             this.txtUserNameArchive.Name = "txtUserNameArchive";
             this.txtUserNameArchive.Size = new System.Drawing.Size(184, 27);
-            this.txtUserNameArchive.TabIndex = 78;
+            this.txtUserNameArchive.TabIndex = 12;
             // 
             // label14
             // 
@@ -527,10 +527,10 @@
             this.button1.Location = new System.Drawing.Point(589, 163);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(262, 30);
-            this.button1.TabIndex = 81;
+            this.button1.TabIndex = 3;
             this.button1.Text = "View Code with Colour Syntax";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.showColouredCode_Click);
             // 
             // cmbLanguage
             // 
@@ -545,7 +545,7 @@
             this.cmbLanguage.Location = new System.Drawing.Point(589, 134);
             this.cmbLanguage.Name = "cmbLanguage";
             this.cmbLanguage.Size = new System.Drawing.Size(262, 27);
-            this.cmbLanguage.TabIndex = 82;
+            this.cmbLanguage.TabIndex = 2;
             this.cmbLanguage.Text = "Pick Code Type";
             // 
             // sourceCodeWebView
@@ -603,6 +603,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnRemove);
             this.Name = "frmDeveloper";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bug Tracker";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

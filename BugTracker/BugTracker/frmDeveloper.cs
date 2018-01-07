@@ -17,12 +17,14 @@ namespace BugTracker
     public partial class frmDeveloper : Form
     {
         SqlConnection mySqlConnection;
-        public frmDeveloper()
+        frmHomePage frmHomePage;
+        public frmDeveloper(frmHomePage frmHomePage)
         {
+            this.frmHomePage = frmHomePage;
             openConnection();
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
             viewBugNames();
-
         }
         /// <summary>
         /// Opens the connection to the database using the SQL Database connection string when the form is opened
@@ -31,17 +33,12 @@ namespace BugTracker
         {
             mySqlConnection =
                  new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Source\Repos\ASE\BugTracker\BugTracker\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
-
             String selcmd = "SELECT App FROM BugTable ORDER BY App";
-
             SqlCommand mySqlCommand = new SqlCommand(selcmd, mySqlConnection);
-
             try
             {
                 mySqlConnection.Open();
-
                 SqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
-
             }
 
             catch (SqlException ex)
@@ -52,7 +49,7 @@ namespace BugTracker
         }
 
         /// <summary>
-        /// Shows the contents of the 'BugTable' table from the application name that has been chosen
+        /// Shows the contents of the 'BugTable' table ordered by the application name that has been chosen
         /// </summary>
         public void simpleBugList()
         {
@@ -83,21 +80,17 @@ namespace BugTracker
                     lbxBugList.Items.Add("Method Name: " + mySqlDataReader["MethodName"]);
                     lbxBugList.Items.Add("Code Block: " + mySqlDataReader["CodeBlock"]);
                     lbxBugList.Items.Add("Line Number: " + mySqlDataReader["LineNumber"]);
+                    //adds an item to list showing -'s to create formatting for easier reading
                     lbxBugList.Items.Add("---------------------------------------------------");
-
+                    //puts the Code field from the database into the textbox from the app selected
                     txtSourceCodeView.Text = mySqlDataReader["Code"].ToString();
-
-
-
-
-
                 }
             }
 
             catch (SqlException ex)
             {
 
-                // MessageBox.Show(bugID + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -136,7 +129,7 @@ namespace BugTracker
             catch (SqlException ex)
             {
 
-                // MessageBox.Show(bugID + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -174,46 +167,36 @@ namespace BugTracker
             catch (SqlException ex)
             {
 
-                // MessageBox.Show(bugID + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
         /// <summary>
-        /// 
+        /// Shows a list of all the bug's application names so the developer can then choose a bug to view in more detail
         /// </summary>
         public void viewBugNames()
         {
             mySqlConnection =
                  new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Source\Repos\ASE\BugTracker\BugTracker\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
-
             String selcmd = "SELECT App FROM BugTable ORDER BY App";
-
             SqlCommand mySqlCommand = new SqlCommand(selcmd, mySqlConnection);
-
             try
             {
                 mySqlConnection.Open();
-
                 SqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
-
                 lbxBugView.Items.Clear();
-
                 while (mySqlDataReader.Read())
                 {
                     lbxBugView.Items.Add("App Name: " + mySqlDataReader["App"]);
                     lbxBugView.Items.Add("---------------------------------------------------");
                 }
-
             }
-
             catch (SqlException ex)
             {
 
                 MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
-
 
         /// <summary>
         /// Opens the help form from the help menu item
@@ -232,10 +215,11 @@ namespace BugTracker
         /// <param name="e"></param>
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            frmHomePage.Show();
             this.Close();
         }
         /// <summary>
-        /// Creates the references for app and comment for the archive table
+        /// Assigns a string value to each @string value for the database archive table
         /// </summary>
         /// <param name="app"></param>
         /// <param name="comment"></param>
@@ -260,7 +244,7 @@ namespace BugTracker
 
         }
         /// <summary>
-        /// Creates the references for app and comment for the comment table
+        /// Assigns a string value to each @string value for the database comment table
         /// </summary>
         /// <param name="app"></param>
         /// <param name="comment"></param>
@@ -343,7 +327,7 @@ namespace BugTracker
             this.WindowState = FormWindowState.Maximized;
         }
         /// <summary>
-        /// Adds the app name and comment into the CommentTable and shows the changes in the Comment listView
+        /// Adds the app name, comment, name and date into the CommentTable and shows the changes in the Comment listView
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -354,11 +338,9 @@ namespace BugTracker
             commentRecord(txtcommentappname.Text, txtcommentbug.Text, txtUsernameComment.Text, txtCommentDate.Text, commandString);
             commentBugList();
             simpleBugList();
-
-
         }
         /// <summary>
-        /// Adds the app name and comment into the ArchiveTable and shows the changes in the Archive listView and also removes the bug information and comments from BugTable and CommentTable
+        /// Adds the app name, comment, date and name into the ArchiveTable and shows the changes in the Archive listView and also removes the bug information and comments from BugTable
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -373,13 +355,14 @@ namespace BugTracker
                 + "'DELETE FROM BugTable WHERE App = '" + txtArchive.Text + "'";
             archiveRecord(txtArchive.Text, txtcommentarchive.Text, txtUserNameArchive.Text, txtDateArchive.Text, commandString);
             archvieBugList();
+            txtArchive.Text = txtcommentarchive.Text = txtUserNameArchive.Text = txtDateArchive.Text = txtSourceCodeView.Text = "";
             simpleBugList();
             commentBugList();
             viewBugNames();
         }
 
         /// <summary>
-        /// Colour codes the source code and outputs to a html file.
+        /// Colour codes the source code in the style of c# and shows this in a web broswer
         /// </summary>
         public void ColourCodeCSharp()
         {
@@ -391,7 +374,7 @@ namespace BugTracker
 
         }
         /// <summary>
-        /// 
+        /// Colour codes the source code in the style of html and shows this in a web broswer
         /// </summary>
         public void ColourCodeHTML()
         {
@@ -402,7 +385,7 @@ namespace BugTracker
             sourceCodeWebView.DocumentText = html;
         }
         /// <summary>
-        /// 
+        /// Colour codes the source code in the style of Java and shows this in a web broswer
         /// </summary>
         public void ColourCodeJava()
         {
@@ -414,25 +397,44 @@ namespace BugTracker
         }
 
         /// <summary>
+        /// Assigns a string value to each @string value for the database bug table
+        /// </summary>
+        /// <param name="appName"></param>
+        /// <param name="error"></param>
+        /// <param name="cause"></param>
+        /// <param name="commandString"></param>
+        public void insertRecord(String code, String commandString)
+        {
+            try
+            {
+                SqlCommand cmdInsert = new SqlCommand(commandString, mySqlConnection);
+                cmdInsert.Parameters.AddWithValue("@code", code);
+                cmdInsert.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        /// <summary>
         /// Updates the source code within the table
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void fixCode_Click(object sender, EventArgs e)
         {
-            String commandString2 = "UPDATE BugTable SET Code = '" + txtSourceCodeView.Text + "' WHERE App = '" + txtBugList.Text + "'";
-            mySqlConnection.Close();
-            mySqlConnection.Open();
-            SqlCommand cmdfixCode = new SqlCommand(commandString2, mySqlConnection);
-            cmdfixCode.ExecuteNonQuery();
+            String commandString = "UPDATE BugTable SET Code = @code WHERE App = '" + txtBugList.Text + "'";
+            insertRecord(txtSourceCodeView.Text, commandString);
             MessageBox.Show("Code Fixed!");
         }
         /// <summary>
-        /// 
+        /// When an option is chosen from the combo box, if the value ='s one of the chosen strings, it colours the code and outputs it to the web broswer.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button1_Click(object sender, EventArgs e)
+        private void showColouredCode_Click(object sender, EventArgs e)
         {
             if (cmbLanguage.Text == "C#")
             {

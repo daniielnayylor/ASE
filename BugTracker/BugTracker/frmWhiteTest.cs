@@ -19,11 +19,14 @@ namespace BugTracker
     public partial class frmWhiteTest : Form
     {
         SqlConnection mySqlConnection;
-        public frmWhiteTest()
+        frmHomePage frmHomePage;
+        public frmWhiteTest(frmHomePage frmHomePage)
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
             populateListBox();
             simpleBugList();
+            this.frmHomePage = frmHomePage;
         }
         /// <summary>
         /// Opens up the connection to the SQL database and shows the contents of the 'BugTable' table in order of the app name.
@@ -63,7 +66,7 @@ namespace BugTracker
             catch (SqlException ex)
             {
 
-                // MessageBox.Show(bugID + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -108,7 +111,7 @@ namespace BugTracker
             catch (SqlException ex)
             {
 
-                // MessageBox.Show(bugID + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -144,7 +147,7 @@ namespace BugTracker
             catch (SqlException ex)
             {
 
-                // MessageBox.Show(bugID + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -184,7 +187,7 @@ namespace BugTracker
             catch (SqlException ex)
             {
 
-                // MessageBox.Show(bugID + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -218,7 +221,7 @@ namespace BugTracker
         }
 
         /// <summary>
-        /// Creates the references of the more advanced detials for the BugTable.
+        /// Assigns a string value to each @string value for the database bug table
         /// </summary>
         /// <param name="appname"></param>
         /// <param name="bugtype"></param>
@@ -260,13 +263,10 @@ namespace BugTracker
         {
                 if (checkInputs())
                 {
-
                     String commandString = "INSERT INTO BugTable(App, BugType, ClassFileName, MethodName, CodeBlock, LineNumber, Code) VALUES (@app, @bugtype, @classfilename, @methodname, @codeblock, @linenumber, @code)";
-
                     insertRecord(txtAppName.Text, txtbugType.Text, txtcfName.Text, txtmthdName.Text, txtcbName.Text, txtlineNumb.Text, txtSourceCode.Text, commandString);
                     populateListBox();  
                     simpleBugList();
-                    //ColourizeCode();
                     cleartxtBoxes();
                 MessageBox.Show("Bug Successfully Reported");
                 }
@@ -286,24 +286,23 @@ namespace BugTracker
                 "', LineNumber = '" + txtlineNumb.Text + "', Code = '" + txtSourceCode.Text + "' WHERE App = '" + txtAppName.Text + "'";
                 SqlCommand cmdEditTable = new SqlCommand(commandString, mySqlConnection);
                 cmdEditTable.ExecuteNonQuery();
-
+                MessageBox.Show("Bug Successfully Updated");
                 populateListBox();
                 cleartxtBoxes();
             }
         }
 
-                /// <summary>
-        /// Creates the references for App Name and Comments for the CommentTable table.
+        /// <summary>
+        /// Assigns a string value to each @string value for the database comment table
         /// </summary>
         /// <param name="app"></param>
         /// <param name="comment"></param>
         /// <param name="commandString"></param>
-        public void insertRecord(String app, String comment, String commandString)
+        public void insertComment(String app, String comment, String commandString)
         {
             try
             {
                 SqlCommand cmdInsert = new SqlCommand(commandString, mySqlConnection);
-
                 cmdInsert.Parameters.AddWithValue("@app", app);
                 cmdInsert.Parameters.AddWithValue("@comment", comment);
                 cmdInsert.ExecuteNonQuery();
@@ -316,15 +315,6 @@ namespace BugTracker
 
         }
 
-        /// <summary>
-        /// Calls the selectBugView method to show the bug details of the chosen app.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnViewBug_Click(object sender, EventArgs e)
-        {
-           
-        }
         /// <summary>
         /// Calls the simpleBugView method to show a simple list of bug details of the chosen app.
         /// </summary>
@@ -343,12 +333,10 @@ namespace BugTracker
         private void btnCommentBug_Click(object sender, EventArgs e)
         {
             String commandStringArchive = "INSERT INTO CommentTable (App, Comment) VALUES ( @app, @comment)";
-            insertRecord(txtcommentappname.Text, txtcommentbug.Text, commandStringArchive);
+            insertComment(txtcommentappname.Text, txtcommentbug.Text, commandStringArchive);
             txtcommentappname.Text = "";
             txtcommentbug.Text = "";
             MessageBox.Show("Comment Submitted");
-
-
         }
         /// <summary>
         /// Opens up the help form.
@@ -367,6 +355,7 @@ namespace BugTracker
         /// <param name="e"></param>
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            frmHomePage.Show();
             this.Close();
         }
         /// <summary>

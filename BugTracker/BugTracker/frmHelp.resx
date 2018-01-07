@@ -118,15 +118,30 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>This is an application which allows black box testers
-to submit and report bugs for an application they are
-testing. It also allows white box testers to submit and
-report bugs in more detail and to view the bugs the
-black box testers have previously submitted. Finally, it
-allows for developers to view all the bugs that have
-been reported by the testers and to go ahead and try to
-fix them and then either make comments on their
-progress/provblems or to archive and fix the bugs.</value>
+    <value>This is an application which allows multiple users to
+report bugs for an application they are either testing
+or developing.
+
+A black box tester can report a bug for the application
+they are testing by submitting the application name,
+the error they are faced with and what caused it.
+
+A white box testers can also submit bugs but will be
+able to give more details such as bug type, method
+name, code block, line number for example. They can
+update existing bugs submitted by a black box tester
+or they can submit their own. A white box tester can
+also leave comments on a bug for the developer to see.
+
+A developer can view all of the bugs that have been
+submitted and then can attempt to fix them. They can
+see all the different details of the bugs, view the
+comments and also leave his own but other developers
+to see. The developer can also archive a bug if he or
+another developer has fixed a bug. This will store it in
+a seperate table so if the same bug appears again, the 
+developers can maybe use some information from the
+archived bug to fix it again.</value>
   </data>
   <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

@@ -12,9 +12,11 @@ namespace BugTracker
 {
     public partial class frmHelp : Form
     {
+        
         public frmHelp()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
         }
         /// <summary>
         /// A small message box to remin the user they are already on the help page instead of opening a new help page from the existing help page
@@ -51,7 +53,6 @@ namespace BugTracker
         private void maximizeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-
         }
         /// <summary>
         /// Restores the size of the form
@@ -61,7 +62,6 @@ namespace BugTracker
         private void restoreToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
-
         }
     }
 }

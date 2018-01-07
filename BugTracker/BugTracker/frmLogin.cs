@@ -17,36 +17,14 @@ namespace BugTracker
     public partial class frmLogin : Form
     {
         SqlConnection mySqlConnection;
-        public frmLogin()
+        frmHomePage frmHomePage;
+        public frmLogin(frmHomePage frmHomePage)
         {
             openConnection();
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.frmHomePage = frmHomePage;
         }
-
-        public frmRegister frmRegister
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public frmDeveloper frmDeveloper
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
         /// <summary>
         /// Opens the connection to the database using the SQL Database connection string when the form is opened.
         /// </summary>
@@ -54,23 +32,17 @@ namespace BugTracker
         {
             mySqlConnection =
                  new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Source\Repos\ASE\BugTracker\BugTracker\Bugs.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true");
-
             String selcmd = "SELECT Username, Password FROM LogInTable ORDER BY Username";
-
             SqlCommand mySqlCommand = new SqlCommand(selcmd, mySqlConnection);
-
             try
             {
                 mySqlConnection.Open();
-
                 SqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
-
             }
 
             catch (SqlException ex)
             {
-
-                // MessageBox.Show(bugID + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         /// <summary>
@@ -89,7 +61,7 @@ namespace BugTracker
                 if (result > 0)
                 {
                     MessageBox.Show("Login Success");
-                    var myForm = new frmDeveloper();
+                    var myForm = new frmDeveloper(frmHomePage);
                     myForm.Show();
                     this.Close();
                 }
@@ -108,9 +80,59 @@ namespace BugTracker
         /// <param name="e"></param>
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            var myForm = new frmRegister();
+            var myForm = new frmRegister(frmHomePage);
             myForm.Show();
             this.Close();
+        }
+
+        /// <summary>
+        /// Minimized the size of the form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void minimizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        /// <summary>
+        /// Restores the form to its normal size.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void restoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+
+        }
+        /// <summary>
+        /// Maximizes the form size.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void maximizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
+        /// <summary>
+        /// Closes the current form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHomePage.Show();
+            this.Close();
+        }
+
+        /// <summary>
+        /// Opens the help form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var myForm = new frmHelp();
+            myForm.Show();
         }
     }
 }

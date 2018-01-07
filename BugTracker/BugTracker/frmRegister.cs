@@ -17,10 +17,13 @@ namespace BugTracker
     public partial class frmRegister : Form
     {
         SqlConnection mySqlConnection;
-        public frmRegister()
+        frmHomePage frmHomePage;
+        public frmRegister(frmHomePage frmHomePage)
         {
             openConnection();
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.frmHomePage = frmHomePage;
         }
         /// <summary>
         /// Opens the connection to the database using the SQL Database connection string when the form is opened.
@@ -45,7 +48,7 @@ namespace BugTracker
             catch (SqlException ex)
             {
 
-                // MessageBox.Show(bugID + " .." + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         /// <summary>
@@ -85,11 +88,61 @@ namespace BugTracker
             {
                 String commandString = "INSERT INTO LogInTable (Username, Password) VALUES ( @username, @password)";
                 registerAccount(txtUsername.Text, txtPassword.Text, commandString);
-                var myForm = new frmLogin();
+                var myForm = new frmLogin(frmHomePage);
                 myForm.Show();
                 this.Close();
 
             }
+        }
+
+        /// <summary>
+        /// Minimized the size of the form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void minimizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        /// <summary>
+        /// Restores the form to its normal size.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void restoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+
+        }
+        /// <summary>
+        /// Maximizes the form size.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void maximizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
+        /// <summary>
+        /// Closes the current form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHomePage.Show();
+            this.Close();
+        }
+
+        /// <summary>
+        /// Opens the help form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var myForm = new frmHelp();
+            myForm.Show();
         }
     }
 }

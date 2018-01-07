@@ -18,54 +18,7 @@ namespace BugTracker
         public frmHomePage()
         {
             InitializeComponent();
-        }
-
-        public frmHelp frmHelp
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public frmBlackTester frmBlackTester
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public frmWhiteTest frmWhiteTest
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public frmLogin frmLogin
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            this.FormBorderStyle = FormBorderStyle.None;
         }
 
         /// <summary>
@@ -94,8 +47,9 @@ namespace BugTracker
         /// <param name="e"></param>
         private void btnWhite_Click(object sender, EventArgs e)
         {
-            var myForm = new frmWhiteTest();
+            var myForm = new frmWhiteTest(this);
             myForm.Show();
+            this.Hide();
         }
         /// <summary>
         /// Opens the black box testers form.
@@ -104,8 +58,9 @@ namespace BugTracker
         /// <param name="e"></param>
         private void btnBlack_Click(object sender, EventArgs e)
         {
-            var myForm = new frmBlackTester();
+            var myForm = new frmBlackTester(this);
             myForm.Show();
+            this.Hide();
         }
         /// <summary>
         /// Opens the developers form.
@@ -114,8 +69,9 @@ namespace BugTracker
         /// <param name="e"></param>
         private void btnDev_Click(object sender, EventArgs e)
         {
-            var myForm = new frmLogin();
+            var myForm = new frmLogin(this);
             myForm.Show();
+            this.Hide();
         }
         /// <summary>
         /// Minimized the size of the form.
