@@ -18,8 +18,7 @@ namespace BugTest
 
             frmB.checkInputs();
 
-            bool test = frmBlackTester.rtnvalue;
-            Assert.IsFalse(test);
+            Assert.IsFalse(frmBlackTester.rtnvalue);
         }
     }
 }
